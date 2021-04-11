@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+<h:head/>
+<h:body>
+    <h2>Flowers:</h2>
+    <ol>
+        <ui:repeat value="#{flowers.allFlowers}" var="flower">
+            <li>#{flower.name}</li>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <h:inputText value="#{flowers.flowerToAdd.name}" required="true" />
+        <h:inputText value="#{flowers.flowerToAdd.price}" required="true" />
+        <h:inputText value="#{flowers.flowerToAdd.remainder}" required="true" />
+        <h:commandButton value="Add new team" action="#{flowers.AddFlower}" />
+    </h:form>
+</h:body>
+</html>
