@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+<h:head/>
+<h:body>
+    <h2>Login:</h2>
+    <h:form>
+        Email: <br/><h:inputText value="#{users.currentUser.email}" required="true" /><br/>
+        Password: <br/><h:inputText value="#{users.currentUser.password}" required="true" /><br/>
+        <h:commandButton value="Login" action="#{users.Login}" /><br/>
+    </h:form>
+    <h:link outcome="register" value="Don't have an account?"/>
+</h:body>
+</html>

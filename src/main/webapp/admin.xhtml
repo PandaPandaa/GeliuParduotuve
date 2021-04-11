@@ -6,8 +6,7 @@
 >
 <h:head/>
 <h:body>
-    <h:link outcome="login" value="Login"/>
-    <h:link outcome="register" value="Register"/>
+    <h:commandButton value="Log Out" action="#{users.LogOut}" /><br/>
     <h2>Flowers:</h2>
     <ol>
         <ui:repeat value="#{flowers.allFlowers}" var="flower">
