@@ -21,7 +21,9 @@
     <h2>Flowers:</h2>
     <ol>
         <ui:repeat value="#{flowers.allFlowers}" var="flower">
-            <h:link value="#{flower.name}" outcome="flowerDetails?playerId=#{flower.id}" />
+            <li>
+                <h:link value="#{flower.name}" outcome="flowerDetails?flowerId=#{flower.id}" />
+            </li>
         </ui:repeat>
     </ol>
 </h:body>

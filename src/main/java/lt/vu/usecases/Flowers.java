@@ -30,7 +30,7 @@ public class Flowers {
     public String AddFlower(){
         flowerToAdd.setRemainder(0);
         this.flowersDAO.persist(flowerToAdd);
-        return "index?faces-redirect=true";
+        return "admin?faces-redirect=true";
     }
 
     private void loadAllFlowers(){
