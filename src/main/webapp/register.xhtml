@@ -8,9 +8,9 @@
 <h:body>
     <h2>Register:</h2>
     <h:form>
-        Email: <br/><h:inputText value="#{users.currentUser.email}" required="true" /><br/>
-        Name: <br/><h:inputText value="#{users.currentUser.name}" required="true" /><br/>
-        Password: <br/><h:inputText value="#{users.currentUser.password}" required="true" /><br/>
+        Email: <br/><h:inputText value="#{users.user.email}" required="true" /><br/>
+        Name: <br/><h:inputText value="#{users.user.name}" required="true" /><br/>
+        Password: <br/><h:inputText value="#{users.user.password}" required="true" /><br/>
         <h:commandButton value="Register" action="#{users.Register}" /><br/>
     </h:form>
 </h:body>

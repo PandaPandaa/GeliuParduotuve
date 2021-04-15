@@ -17,29 +17,39 @@ public class Users {
     @Inject
     private UsersDAO usersDAO;
 
+    @Inject
+    private CurrentUser currentUser;
+
     @Getter @Setter
-    private User currentUser = new User();
+    private User user = new User();
 
     @Transactional
     public String Register()
     {
-        if(!this.usersDAO.userExists(currentUser.getEmail()))
+        if(!this.usersDAO.userExists(user.getEmail()))
         {
-            this.usersDAO.persist(new User(currentUser.getEmail(), currentUser.getName(), currentUser.getPassword(), UserType.CUSTOMER));
+            user.setType(UserType.CUSTOMER);
+            this.usersDAO.persist(user);
         }
+        currentUser.setCurrentUser(user);
         return "customer?faces-redirect=true";
     }
 
     @Transactional
     public String Login(){
-        User user = this.usersDAO.findByEmail(currentUser.getEmail());
+        User user = this.usersDAO.findByEmail(this.user.getEmail());
         if(user == null) return "null user";
-        else if (!user.getPassword().equals(currentUser.getPassword())) return "bad pass";
-        else return user.getType().toString().toLowerCase(Locale.ROOT) + "?faces-redirect=true";
+        else if (!user.getPassword().equals(this.user.getPassword())) return "bad pass";
+        else
+        {
+            currentUser.setCurrentUser(user);
+            return user.getType().toString().toLowerCase(Locale.ROOT) + "?faces-redirect=true";
+        }
     }
 
     public void LogOut()
     {
-        currentUser = new User();
+        currentUser.setCurrentUser(new User());
+//        return "customer?faces-redirect=true";
     }
 }

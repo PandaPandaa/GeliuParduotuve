@@ -2,15 +2,26 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:c="http://java.sun.com/jsp/jstl/core"
 >
 <h:head/>
 <h:body>
-    <h:commandButton value="Log Out" action="#{users.LogOut}" /><br/>
+    <c:choose>
+        <c:when test="#{currentUser.loggedIn}">
+            Hello, #{currentUser.currentUser.name} <br/>
+            <h:form>
+                <h:commandButton value="Log Out" action="#{users.LogOut}" />
+            </h:form><br/>
+        </c:when>
+        <c:otherwise>
+            <h:link outcome="login" value="Login"/><br/>
+            <h:link outcome="register" value="Register"/>
+        </c:otherwise>
+    </c:choose>
     <h2>Flowers:</h2>
     <ol>
         <ui:repeat value="#{flowers.allFlowers}" var="flower">
-            <li>#{flower.name}</li>
+            <h:link value="#{flower.name}" outcome="flowerDetails?playerId=#{flower.id}" />
         </ui:repeat>
     </ol>
 </h:body>

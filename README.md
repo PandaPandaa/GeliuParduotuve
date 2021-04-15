@@ -1,13 +1,9 @@
-# Java EE practice project
-Project is based on *Maven*, thus import project to IntelliJ IDEA by:
-* File -> Open... -> pick `pom.xml` file.
+Flower eshop by Hey Financial Independence
 
-## Application Server configuration
+To do (backend):
+1. Cart
+2. Order execution
+3. Order confirmation by email (why not)
 
-### WildFly
-
-1. Download ZIP of WildFly 18 "Java EE Full & Web Distribution" from: [http://wildfly.org/downloads/]
-2. Unzip
-3. In IntelliJ IDEA: register "JBoss Server" -> local:
-    * Press "Fix", choose "exploded war"
-4. Run the server, project should start successfully.
+To do (frontend):
+1. Frontend

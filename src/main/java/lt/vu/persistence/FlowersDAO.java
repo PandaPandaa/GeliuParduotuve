@@ -16,17 +16,10 @@ public class FlowersDAO {
     private EntityManager em;
 
     public List<Flower> loadAll() {
-        List<Flower> a = em.createNamedQuery("Flower.findAll", Flower.class).getResultList();
-        for (Flower f :
-             a) {
-            System.out.println(f.getName());
-        }
-        return a;
+        return em.createNamedQuery("Flower.findAll", Flower.class).getResultList();
     }
 
     public void persist(Flower flower){
-        System.out.println(flower.getName());
-        System.out.println(flower.getPrice());
         this.em.persist(flower);
     }
 
