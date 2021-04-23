@@ -6,6 +6,8 @@ import lt.vu.enums.OrderStatus;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Objects;
 
@@ -22,7 +24,7 @@ public class Order implements Serializable {
     private Integer id;
 
     @Column(name = "DATE")
-    private Date date;
+    private LocalDateTime date;
 
     @ManyToOne
     @JoinColumn(name="USER_ID")

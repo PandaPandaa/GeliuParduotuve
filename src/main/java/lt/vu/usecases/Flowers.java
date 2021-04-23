@@ -28,7 +28,6 @@ public class Flowers {
 
     @Transactional
     public String AddFlower(){
-        flowerToAdd.setRemainder(0);
         this.flowersDAO.persist(flowerToAdd);
         return "admin?faces-redirect=true";
     }
