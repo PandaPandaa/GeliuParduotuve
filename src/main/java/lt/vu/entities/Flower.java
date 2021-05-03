@@ -2,6 +2,7 @@ package lt.vu.entities;
 
 import lombok.Getter;
 import lombok.Setter;
+import lt.vu.enums.FlowerCategory;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -26,8 +27,14 @@ public class Flower implements Serializable {
     @Column(name = "PRICE")
     private Double price;
 
-    @Column(name="REMAINDER")
+    @Column(name = "REMAINDER")
     private Integer remainder;
+
+    @Column(name = "FLOWER_PHOTO")
+    private byte[] flowerPhoto;
+
+    @Column(name = "CATEGORY")
+    private FlowerCategory flowerCategory;
 
     public Flower() {
     }

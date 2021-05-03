@@ -1,8 +1,6 @@
 package lt.vu.persistence;
 
-import lombok.var;
 import lt.vu.entities.Flower;
-import lt.vu.entities.Team;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
