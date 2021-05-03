@@ -1,14 +1,18 @@
 package lt.vu.entities;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import lombok.Getter;
 import lombok.Setter;
 import lt.vu.enums.OrderStatus;
+import lt.vu.utilities.OrderInfo;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -34,9 +38,19 @@ public class Order implements Serializable {
     private OrderStatus status;
 
     @Column(name = "INFO")
-    private String serializedOrderInfo;
+    private String orderInfo;
 
     public Order() {
+    }
+
+    public List<OrderInfo> getOrderInfo() {
+        Gson gson = new Gson();
+        return gson.fromJson(orderInfo, new TypeToken<List<OrderInfo>>(){}.getType());
+    }
+
+    public void setOrderInfo(List<OrderInfo> orderInfos) {
+        Gson gson = new Gson();
+        this.orderInfo = gson.toJson(orderInfos);
     }
 
     @Override

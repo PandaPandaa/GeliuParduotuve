@@ -27,7 +27,7 @@
         </ui:repeat>
     </ol>
     <h:form>
-        <h:commandButton value="Place Order" action="#{cart.PlaceOrder}" />
+        <h:commandButton value="Place Order" action="#{orderController.PlaceOrder(cart.orderInfos)}" />
     </h:form><br/>
 </h:body>
 </html>

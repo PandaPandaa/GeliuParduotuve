@@ -21,14 +21,8 @@ import java.util.List;
 
 @Named
 @SessionScoped
-public class Cart implements Serializable {
-
-    @Inject
-    private CurrentUser currentUser;
-
-    @Inject
-    private OrdersDAO ordersDAO;
-
+public class Cart implements Serializable
+{
     @Getter @Setter
     private List<OrderInfo> orderInfos = new ArrayList<OrderInfo>();
 
@@ -43,35 +37,8 @@ public class Cart implements Serializable {
             }
             else orderInfo.IncreaseAmount(amount);
         }
-        else orderInfos.add(new OrderInfo(flower.getName(), flower.getPrice(), amount));
-
-
-        //MANUAL TEST (seems to work)
-        System.out.println();
-        System.out.println("CART:");
-        System.out.println();
-        System.out.println();
-        for (OrderInfo o:
-             orderInfos) {
-            System.out.println(o.getFlowerName() + "  " + o.getFlowerAmount());
-        }
-
-
+        else orderInfos.add(new OrderInfo(flower, amount));
 
         return "flowerDetails?faces-redirect=true&flowerId=" + flower.getId();
     }
-
-    @Transactional
-    public void PlaceOrder()
-    {
-        System.out.println("a");
-        Order order = new Order();
-        order.setDate(LocalDateTime.now());
-        order.setUser(currentUser.isLoggedIn() ? currentUser.getCurrentUser() : new User());
-        order.setStatus(OrderStatus.ACCEPTED);
-        Gson gson = new Gson();
-        order.setSerializedOrderInfo(gson.toJson(orderInfos));
-        ordersDAO.persist(order);
-    }
-
 }

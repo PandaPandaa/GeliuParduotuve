@@ -2,10 +2,14 @@ package lt.vu.utilities;
 
 import lombok.Getter;
 import lombok.Setter;
+import lt.vu.entities.Flower;
 
 import java.io.Serializable;
 
 public class OrderInfo implements Serializable {
+
+    @Getter @Setter
+    private Integer flowerId;
 
     @Getter @Setter
     private String flowerName;
@@ -16,10 +20,11 @@ public class OrderInfo implements Serializable {
     @Getter @Setter
     private Integer flowerAmount;
 
-    public OrderInfo(String name, Double price, Integer amount)
+    public OrderInfo(Flower flower, Integer amount)
     {
-        this.flowerName = name;
-        this.flowerPrice = price;
+        this.flowerId = flower.getId();
+        this.flowerName = flower.getName();
+        this.flowerPrice = flower.getPrice();
         this.flowerAmount = amount;
     }
 

@@ -6,7 +6,7 @@
     <!-- H2 Database -->
     <Resource id="ShopDataSource" type="DataSource">
         JdbcDriver = org.h2.Driver
-        JdbcUrl = jdbc:h2:C:/Users/User/Desktop/java-ee-practice-master/shop
+        JdbcUrl = jdbc:h2:C:/Users/User/Desktop/java-ee-practice-master/FlowerShop
         UserName = sa
         Password =
         InitialSize = 1
