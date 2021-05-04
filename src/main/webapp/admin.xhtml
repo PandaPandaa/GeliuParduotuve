@@ -6,7 +6,9 @@
 >
 <h:head/>
 <h:body>
-    <h:commandButton value="Log Out" action="#{users.LogOut}" /><br/>
+    <h:form>
+        <h:commandButton value="Log Out" action="#{users.LogOut}" /><br/>
+    </h:form>
     <h2>Flowers:</h2>
     <ol>
         <ui:repeat value="#{flowers.allFlowers}" var="flower">
@@ -17,6 +19,7 @@
     <h:form>
         Flower's name: <br/><h:inputText value="#{flowers.flowerToAdd.name}" required="true" /><br/>
         Flower's price: <br/><h:inputText value="#{flowers.flowerToAdd.price}" required="true" /><br/>
+        Flower's remainder: <br/><h:inputText value="#{flowers.flowerToAdd.remainder}" required="true" /><br/>
         <h:commandButton value="Add new flower" action="#{flowers.AddFlower}" /><br/>
     </h:form>
 </h:body>
