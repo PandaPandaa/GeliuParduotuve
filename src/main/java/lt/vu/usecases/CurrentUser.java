@@ -12,8 +12,17 @@ import java.io.Serializable;
 @SessionScoped
 public class CurrentUser implements Serializable {
 
-    @Getter @Setter
-    private User currentUser = new User();
+    public static User currentUser = new User();
+
+    public User getCurrentUser()
+    {
+        return currentUser;
+    }
+
+    public void setCurrentUser(User user)
+    {
+        currentUser = user;
+    }
 
     public boolean isLoggedIn()
     {

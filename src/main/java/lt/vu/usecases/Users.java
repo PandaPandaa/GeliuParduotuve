@@ -4,11 +4,15 @@ import lombok.Getter;
 import lombok.Setter;
 import lt.vu.entities.User;
 import lt.vu.enums.UserType;
+import lt.vu.interceptors.LoggedInvocation;
 import lt.vu.persistence.UsersDAO;
 
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.Locale;
 
 @Model
@@ -23,6 +27,7 @@ public class Users {
     @Getter @Setter
     private User user = new User();
 
+    @LoggedInvocation
     @Transactional
     public String Register()
     {
@@ -35,6 +40,7 @@ public class Users {
         return "customer?faces-redirect=true";
     }
 
+    @LoggedInvocation
     @Transactional
     public String Login(){
         User user = this.usersDAO.findByEmail(this.user.getEmail());
@@ -47,6 +53,7 @@ public class Users {
         }
     }
 
+    @LoggedInvocation
     public void LogOut()
     {
         currentUser.setCurrentUser(new User());

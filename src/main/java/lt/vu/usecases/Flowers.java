@@ -3,6 +3,7 @@ package lt.vu.usecases;
 import lombok.Getter;
 import lombok.Setter;
 import lt.vu.entities.Flower;
+import lt.vu.interceptors.LoggedInvocation;
 import lt.vu.persistence.FlowersDAO;
 
 import javax.annotation.PostConstruct;
@@ -26,12 +27,14 @@ public class Flowers {
     @PostConstruct
     public void init(){ loadAllFlowers(); }
 
+    @LoggedInvocation
     @Transactional
     public String AddFlower(){
         this.flowersDAO.persist(flowerToAdd);
         return "admin?faces-redirect=true";
     }
 
+    @LoggedInvocation
     private void loadAllFlowers(){
         this.allFlowers = flowersDAO.loadAll();
     }

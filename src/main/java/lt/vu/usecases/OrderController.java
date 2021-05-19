@@ -3,6 +3,7 @@ package lt.vu.usecases;
 import lt.vu.entities.Flower;
 import lt.vu.entities.Order;
 import lt.vu.enums.OrderStatus;
+import lt.vu.interceptors.LoggedInvocation;
 import lt.vu.persistence.FlowersDAO;
 import lt.vu.persistence.OrdersDAO;
 import lt.vu.utilities.OrderInfo;
@@ -14,18 +15,19 @@ import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@LoggedInvocation
 @Named
 @RequestScoped
 public class OrderController
 {
     @Inject
-    private CurrentUser currentUser;
-
-    @Inject
     private OrdersDAO ordersDAO;
 
     @Inject
     private FlowersDAO flowersDAO;
+
+    @Inject
+    private CurrentUser currentUser;
 
     @Transactional
     public void PlaceOrder(List<OrderInfo> orderInfos)

@@ -7,6 +7,7 @@ import lt.vu.entities.Flower;
 import lt.vu.entities.Order;
 import lt.vu.entities.User;
 import lt.vu.enums.OrderStatus;
+import lt.vu.interceptors.LoggedInvocation;
 import lt.vu.persistence.OrdersDAO;
 import lt.vu.utilities.OrderInfo;
 
@@ -26,6 +27,7 @@ public class Cart implements Serializable
     @Getter @Setter
     private List<OrderInfo> orderInfos = new ArrayList<OrderInfo>();
 
+    @LoggedInvocation
     public String addToCart(Flower flower, Integer amount)
     {
         if(orderInfos.stream().anyMatch(o -> o.getFlowerName().equals(flower.getName())))
