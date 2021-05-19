@@ -25,7 +25,7 @@ public class MethodLogger implements Serializable{
 
     @AroundInvoke
     public Object logMethodInvocation(InvocationContext context) throws Exception {
-        String id = "";
+        String id;
         FileWriter logger = new FileWriter("log.txt");
         if(CurrentUser.currentUser.getId() != null)
         {
@@ -55,6 +55,7 @@ public class MethodLogger implements Serializable{
             log.setDate(LocalDateTime.now());
             log.setStackTrace(ExceptionUtils.getStackTrace(e));
             log.setUser(id);
+            loggerDAO.get().persist(log);
         }
         return result;
     }
