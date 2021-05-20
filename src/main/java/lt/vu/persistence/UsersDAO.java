@@ -6,12 +6,13 @@ import lt.vu.entities.User;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 @ApplicationScoped
 public class UsersDAO {
 
-    @Inject
+    @PersistenceContext
     private EntityManager em;
 
     public void persist(User user){

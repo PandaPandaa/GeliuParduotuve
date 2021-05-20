@@ -18,6 +18,9 @@ public class Flowers {
     @Inject
     private FlowersDAO flowersDAO;
 
+    @Inject
+    private FlowerProcessing flowerProcessing;
+
     @Getter @Setter
     private Flower flowerToAdd = new Flower();
 
@@ -28,10 +31,8 @@ public class Flowers {
     public void init(){ loadAllFlowers(); }
 
     @LoggedInvocation
-    @Transactional
     public String AddFlower(){
-        this.flowersDAO.persist(flowerToAdd);
-        return "admin?faces-redirect=true";
+        return flowerProcessing.AddFlower(flowerToAdd);
     }
 
     @LoggedInvocation

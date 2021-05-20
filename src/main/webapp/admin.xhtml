@@ -21,6 +21,7 @@
         Flower's price: <br/><h:inputText value="#{flowers.flowerToAdd.price}" required="true" /><br/>
         Flower's remainder: <br/><h:inputText value="#{flowers.flowerToAdd.remainder}" required="true" /><br/>
         <h:commandButton value="Add new flower" action="#{flowers.AddFlower}" /><br/>
+        <h:outputText value="Flower will be added shortly" rendered="#{param['message'] == 'addingflower'}" />
     </h:form>
 </h:body>
 </html>

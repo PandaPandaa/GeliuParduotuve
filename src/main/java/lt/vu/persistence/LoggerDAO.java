@@ -6,11 +6,12 @@ import lt.vu.entities.Order;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 @ApplicationScoped
 public class LoggerDAO {
 
-    @Inject
+    @PersistenceContext
     private EntityManager em;
 
     public void persist(LogException exc){

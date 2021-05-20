@@ -1,6 +1,5 @@
 package lt.vu.usecases;
 
-import lt.vu.entities.Flower;
 import lt.vu.entities.Order;
 import lt.vu.enums.OrderStatus;
 import lt.vu.interceptors.LoggedInvocation;
@@ -24,10 +23,10 @@ public class OrderController
     private OrdersDAO ordersDAO;
 
     @Inject
-    private FlowersDAO flowersDAO;
+    private CurrentUser currentUser;
 
     @Inject
-    private CurrentUser currentUser;
+    private FlowerProcessing flowerProcessing;
 
     @Transactional
     public void PlaceOrder(List<OrderInfo> orderInfos)
@@ -38,7 +37,7 @@ public class OrderController
         order.setStatus(OrderStatus.ACCEPTED);
         order.setOrderInfo(orderInfos);
         ordersDAO.persist(order);
-        ReduceFlowerRemainder(orderInfos);
+        flowerProcessing.ReduceFlowerRemainder(orderInfos);
     }
 
     @Transactional
@@ -46,27 +45,6 @@ public class OrderController
     {
         Order order = ordersDAO.findOne(orderId);
         order.setStatus(OrderStatus.CANCELED);
-        RestoreFlowerRemainder(order.getOrderInfo());
+        flowerProcessing.IncreaseFlowerRemainder(order.getOrderInfo());
     }
-
-    @Transactional
-    public void ReduceFlowerRemainder(List<OrderInfo> orderInfos)
-    {
-        for (OrderInfo o:
-                orderInfos) {
-            Flower flower = flowersDAO.findOne(o.getFlowerId());
-            flower.setRemainder(flower.getRemainder() - o.getFlowerAmount());
-        }
-    }
-
-    @Transactional
-    public void RestoreFlowerRemainder(List<OrderInfo> orderInfos)
-    {
-        for (OrderInfo o:
-                orderInfos) {
-            Flower flower = flowersDAO.findOne(o.getFlowerId());
-            flower.setRemainder(flower.getRemainder() + o.getFlowerAmount());
-        }
-    }
-
 }

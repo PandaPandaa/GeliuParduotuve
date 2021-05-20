@@ -5,12 +5,13 @@ import lt.vu.entities.Flower;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @ApplicationScoped
 public class FlowersDAO {
 
-    @Inject
+    @PersistenceContext
     private EntityManager em;
 
     public List<Flower> loadAll() {
