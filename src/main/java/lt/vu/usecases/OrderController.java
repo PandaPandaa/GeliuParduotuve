@@ -3,7 +3,6 @@ package lt.vu.usecases;
 import lt.vu.entities.Order;
 import lt.vu.enums.OrderStatus;
 import lt.vu.interceptors.LoggedInvocation;
-import lt.vu.persistence.FlowersDAO;
 import lt.vu.persistence.OrdersDAO;
 import lt.vu.utilities.OrderInfo;
 
@@ -36,8 +35,8 @@ public class OrderController
         order.setUser(currentUser.isLoggedIn() ? currentUser.getCurrentUser() : null);
         order.setStatus(OrderStatus.ACCEPTED);
         order.setOrderInfo(orderInfos);
-        ordersDAO.persist(order);
         flowerProcessing.ReduceFlowerRemainder(orderInfos);
+        ordersDAO.persist(order);
     }
 
     @Transactional
@@ -45,6 +44,7 @@ public class OrderController
     {
         Order order = ordersDAO.findOne(orderId);
         order.setStatus(OrderStatus.CANCELED);
+        ordersDAO.update(order);
         flowerProcessing.IncreaseFlowerRemainder(order.getOrderInfo());
     }
 }

@@ -9,10 +9,8 @@ import lt.vu.persistence.UsersDAO;
 
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
+import javax.persistence.OptimisticLockException;
 import javax.transaction.Transactional;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.Locale;
 
 @Model
@@ -54,9 +52,27 @@ public class Users {
     }
 
     @LoggedInvocation
-    public void LogOut()
+    public String LogOut()
     {
         currentUser.setCurrentUser(new User());
-//        return "customer?faces-redirect=true";
+        return "customer?faces-redirect=true";
+    }
+
+    @LoggedInvocation
+    @Transactional
+    public String UpdateCurrentUser()
+    {
+        try {
+            if(currentUser.isLoggedIn())
+            {
+                currentUser.getCurrentUser().setName(user.getName());
+                currentUser.getCurrentUser().setEmail(user.getEmail());
+                currentUser.getCurrentUser().setPassword(user.getPassword());
+                usersDAO.update(currentUser.getCurrentUser());
+            }
+        } catch (OptimisticLockException e) {
+            return currentUser.getCurrentUser().getType().toString().toLowerCase(Locale.ROOT) + "?faces-redirect=true" + "&error=optimistic-lock-exception";
+        }
+        return currentUser.getCurrentUser().getType().toString().toLowerCase(Locale.ROOT) + "?faces-redirect=true";
     }
 }

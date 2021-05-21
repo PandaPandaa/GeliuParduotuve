@@ -5,16 +5,16 @@ import lt.vu.persistence.FlowersDAO;
 import lt.vu.utilities.OrderInfo;
 
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.persistence.OptimisticLockException;
 import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 @Named
-@SessionScoped
+@RequestScoped
 public class FlowerProcessing implements Serializable {
 
     @Inject
@@ -43,6 +43,7 @@ public class FlowerProcessing implements Serializable {
                 orderInfos) {
             Flower flower = flowersDAO.findOne(o.getFlowerId());
             flower.setRemainder(flower.getRemainder() - o.getFlowerAmount());
+            flowersDAO.update(flower);
         }
     }
 
@@ -53,6 +54,7 @@ public class FlowerProcessing implements Serializable {
                 orderInfos) {
             Flower flower = flowersDAO.findOne(o.getFlowerId());
             flower.setRemainder(flower.getRemainder() + o.getFlowerAmount());
+            flowersDAO.update(flower);
         }
     }
 }
