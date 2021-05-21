@@ -1,10 +1,12 @@
 package lt.vu.usecases;
 
 import lt.vu.entities.Flower;
+import lt.vu.interfaces.FlowerProcessing;
 import lt.vu.persistence.FlowersDAO;
 import lt.vu.utilities.OrderInfo;
 
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.OptimisticLockException;
@@ -13,9 +15,10 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+@Alternative
 @Named
 @RequestScoped
-public class FlowerProcessing implements Serializable {
+public class InstantFlowerProcessing implements Serializable, FlowerProcessing {
 
     @Inject
     private FlowersDAO flowersDAO;

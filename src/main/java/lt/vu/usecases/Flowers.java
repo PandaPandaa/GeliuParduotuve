@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lt.vu.entities.Flower;
 import lt.vu.interceptors.LoggedInvocation;
+import lt.vu.interfaces.FlowerProcessing;
 import lt.vu.persistence.FlowersDAO;
 
 import javax.annotation.PostConstruct;

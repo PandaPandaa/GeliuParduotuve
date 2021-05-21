@@ -3,6 +3,7 @@ package lt.vu.usecases;
 import lt.vu.entities.Order;
 import lt.vu.enums.OrderStatus;
 import lt.vu.interceptors.LoggedInvocation;
+import lt.vu.interfaces.FlowerProcessing;
 import lt.vu.persistence.OrdersDAO;
 import lt.vu.utilities.OrderInfo;
 

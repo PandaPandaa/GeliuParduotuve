@@ -9,4 +9,7 @@
     <interceptors>
         <class>lt.vu.interceptors.MethodLogger</class>
     </interceptors>
+    <alternatives>
+        <class>lt.vu.usecases.IntenseFlowerProcessing</class>
+    </alternatives>
 </beans>
