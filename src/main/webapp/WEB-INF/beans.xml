@@ -7,9 +7,9 @@
         bean-discovery-mode="annotated">
 
     <interceptors>
-        <class>lt.vu.interceptors.MethodLogger</class>
+        <class>GP.interceptors.MethodLogger</class>
     </interceptors>
     <alternatives>
-        <class>lt.vu.usecases.IntenseFlowerProcessing</class>
+        <class>GP.usecases.IntenseFlowerProcessing</class>
     </alternatives>
 </beans>

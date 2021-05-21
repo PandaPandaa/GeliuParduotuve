@@ -1,0 +1,25 @@
+package GP.persistence;
+
+import GP.entities.Order;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+@ApplicationScoped
+public class OrdersDAO {
+
+    @PersistenceContext
+    private EntityManager em;
+
+    public void persist(Order order){
+        this.em.persist(order);
+    }
+
+    public Order findOne(Integer id){ return em.find(Order.class, id);
+    }
+
+    public Order update(Order order){
+        return em.merge(order);
+    }
+}
