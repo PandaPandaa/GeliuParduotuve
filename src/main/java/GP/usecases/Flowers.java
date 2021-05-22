@@ -27,20 +27,14 @@ public class Flowers {
     @Getter @Setter
     private Flower flowerToAdd = new Flower();
 
-    @Getter
-    private List<Flower> allFlowers;
-
-    @PostConstruct
-    public void init(){ loadAllFlowers(); }
-
     @LoggedInvocation
     public String AddFlower(){
         return flowerProcessing.AddFlower(flowerToAdd);
     }
 
     @LoggedInvocation
-    private void loadAllFlowers(){
-        this.allFlowers = flowersDAO.loadAll();
+    public List<Flower> loadAllFlowers(){
+        return flowersDAO.loadAll();
     }
 
     @LoggedInvocation
