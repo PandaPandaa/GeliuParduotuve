@@ -48,4 +48,9 @@ public class OrderController
         ordersDAO.update(order);
         flowerProcessing.IncreaseFlowerRemainder(order.getOrderInfo());
     }
+
+    public List<Order> loadAllOrders()
+    {
+        return ordersDAO.loadAll();
+    }
 }
