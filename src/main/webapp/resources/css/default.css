@@ -67,10 +67,10 @@ p.small,h3.small {
     width: auto;
 }
 .headMenu{
-    margin-bottom: 0px !important;
+    margin-bottom: 0 !important;
     background-color: #D77A61 !important;
     border:none !important;
-    border-radius: 0px !important;
+    border-radius: 0 !important;
 }
 .white
 {
