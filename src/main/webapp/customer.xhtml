@@ -26,7 +26,7 @@
         <div class="thingy5">
             <h2>Flowers:</h2>
             <ol>
-                <ui:repeat value="#{flowers.allFlowers}" var="flower">
+                <ui:repeat value="#{flowers.loadAllFlowers()}" var="flower">
                     <li>
                         <h:link value="#{flower.name}" outcome="flowerDetails?flowerId=#{flower.id}" />
                     </li>

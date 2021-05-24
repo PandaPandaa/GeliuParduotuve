@@ -25,7 +25,7 @@
             <div class="thingy5">
                 <h2>My Cart</h2>
                 <ol>
-                    <ui:repeat value="#{flowers.allFlowers}" var="flower">
+                    <ui:repeat value="#{flowers.loadAllFlowers()}" var="flower">
                         <li>#{flower.name}</li>
                     </ui:repeat>
 

@@ -27,7 +27,7 @@
             <div id="navbar"></div>
             <h2>Flowers:</h2>
             <ol>
-                <ui:repeat value="#{flowers.allFlowers}" var="flower">
+                <ui:repeat value="#{flowers.loadAllFlowers()}" var="flower">
                     <li>#{flower.name}</li>
                 </ui:repeat>
             </ol>

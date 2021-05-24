@@ -34,9 +34,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5cc321cf-ed0b-4da2-9925-61766a0cea28" name="Default Changelist" comment="base of the login and registration system">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlowerShop.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/FlowerShop.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlowerShop.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/FlowerShop.trace.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlowerShop.mv.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlowerShop.trace.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/customer.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/customer.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,6 +280,8 @@
       <workItem from="1619821184190" duration="64000" />
       <workItem from="1620137019638" duration="362000" />
       <workItem from="1620400114459" duration="389000" />
+      <workItem from="1621871393403" duration="2075000" />
+      <workItem from="1621873505738" duration="417000" />
     </task>
     <task id="LOCAL−00001" summary="start">
       <created>1618151428543</created>
@@ -315,7 +320,21 @@
       <option name="project" value="LOCAL" />
       <updated>1621870860491</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="merge conflict">
+      <created>1621871489500</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1621871489500</updated>
+    </task>
+    <task id="LOCAL-00008" summary="merge conflict">
+      <created>1621871508365</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1621871508365</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,29 +370,46 @@
     <MESSAGE value="Added base cart functionality" />
     <MESSAGE value="New Database" />
     <MESSAGE value="base of the login and registration system" />
-    <option name="LAST_COMMIT_MESSAGE" value="base of the login and registration system" />
+    <MESSAGE value="merge conflict" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge conflict" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621873925107">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621873925107" />
+    <state x="691" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1621873631089">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="691" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621873631089" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1621870967829">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621870967829" />
-    <state width="1293" height="277" key="GridCell.Tab.0.bottom" timestamp="1621870933485">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1621873916580">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621870933485" />
-    <state width="1293" height="277" key="GridCell.Tab.0.center" timestamp="1621870933485">
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621873916580" />
+    <state width="1293" height="273" key="GridCell.Tab.0.bottom" timestamp="1621873925493">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="277" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621870933485" />
-    <state width="1293" height="277" key="GridCell.Tab.0.left" timestamp="1621870933484">
+    <state width="1293" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621873925493" />
+    <state width="1293" height="273" key="GridCell.Tab.0.center" timestamp="1621873925493">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="277" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621870933484" />
-    <state width="1293" height="277" key="GridCell.Tab.0.right" timestamp="1621870933485">
+    <state width="1293" height="273" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621873925493" />
+    <state width="1293" height="273" key="GridCell.Tab.0.left" timestamp="1621873925493">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="277" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621870933485" />
+    <state width="1293" height="273" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621873925493" />
+    <state width="1293" height="273" key="GridCell.Tab.0.right" timestamp="1621873925493">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="273" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621873925493" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1621872900300">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621872900300" />
     <state x="184" y="86" key="MergeDialog" timestamp="1621870832576">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -382,10 +418,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621870832582" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1621870966029">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1621871516399">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621870966029" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621871516399" />
+    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1621873574252">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621873574252" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
