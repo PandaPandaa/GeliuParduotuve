@@ -1,17 +1,67 @@
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
->
-<h:head/>
-<h:body>
-    <h2>Register:</h2>
-    <h:form>
-        Email: <br/><h:inputText value="#{users.user.email}" required="true" /><br/>
-        Name: <br/><h:inputText value="#{users.user.name}" required="true" /><br/>
-        Password: <br/><h:inputText value="#{users.user.password}" required="true" /><br/>
-        <h:commandButton value="Register" action="#{users.Register}" /><br/>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <title>Sign in or Register | Flowershop</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&amp;display=swap" rel="stylesheet"/>
+    <h:outputStylesheet library="css" name="default.css" />
+    <h:outputStylesheet library="loginCss" name="login.css" />
+    <h:outputScript library="js" name="homepage.js" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#navbar").load("navbar.xhtml");
+        });
+    </script>
+    <script>
+        $(function(){
+            $("#footer").load("footer.xhtml");
+        });
+    </script>
+</h:head>
+<h:body class="lightGreyBackground">
+    <div id="navbar"></div>
+    <h:form class="ui form" id="register">
+        <div class="lightGreyDiv">
+            <div class="thingy5">
+                <h1 class="ui header">Register</h1>
+                <div class="thingy6">
+                    <div class="two fields">
+                        <div class="field">
+                            <h:outputLabel for="firstName" value="Name"/>
+                            <h:inputText id="firstName" label="Name" value="#{users.user.name}" required="true" >
+                                <f:ajax event="change" render="firstNameError"/>
+                            </h:inputText>
+                            <br/>
+                            <h:message id="firstNameError" class="error" for="firstName"/>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <h:outputLabel for="email" value="email"/>
+                        <h:inputText id="email" label="Email" value="#{users.user.email}" required="true">
+                            <f:validateRegex pattern="([^.@]+)(\.[^.@]+)*@([^.@]+\.)+([^.@]+)" />
+                            <f:ajax event="change" render="emailError"/>
+                        </h:inputText>
+                        <br/>
+                        <h:message id="emailError" class="error" for="email"/>
+                    </div>
+                    <div class="field">
+                        <h:outputLabel for="password" value="password"/>
+                        <h:inputSecret id="password" value="#{users.user.password}" label="#{msgs.password}" required="true">
+                            <f:ajax event="change" render="passwordError"/>
+                        </h:inputSecret>
+                        <br/>
+                        <h:message id="passwordError" class="error" for="password"/>
+                    </div>
+                    <h:commandButton class="huge black fluid ui button" id="registerBtn" value="Register" action="#{users.Register}" />
+                    <br/>
+                    <a href="login.xhtml" class="signUpLink">login</a>
+                </div>
+            </div>
+        </div>
     </h:form>
+    <div id="footer"></div>
 </h:body>
 </html>

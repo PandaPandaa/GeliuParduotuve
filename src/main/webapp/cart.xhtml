@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Sign in or Register | Flowershop</title>
+        <h:outputStylesheet library="css" name="default.css" />
+        <h:outputScript library="js" name="homepage.js" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $("#navbar").load("navbar.xhtml");
+            });
+        </script>
+        <script>
+            $(function(){
+                $("#footer").load("footer.xhtml");
+            });
+        </script>
+    </h:head>
+    <h:body class="lightGreyBackground">
+        <div id="navbar"></div>
+        <div class="lightGreyDiv">
+            <div class="thingy5">
+                <h2>My Cart</h2>
+                <ol>
+                    <ui:repeat value="#{flowers.loadAllFlowers()}" var="flower">
+                        <li>#{flower.name}</li>
+                    </ui:repeat>
+
+                </ol>
+            </div>
+        </div>
+        <div id="footer"></div>
+    </h:body>
+</html>

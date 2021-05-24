@@ -2,31 +2,49 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
 >
-<h:head/>
-<h:body>
-    <h2>#{flowerDetails.flower.name}:</h2>
+<h:head>
+    <h:outputStylesheet library="css" name="default.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"/>
+    <script>
+        $(function(){
+            $("#navbar").load("navbar.xhtml");
+        });
+    </script>
+    <script>
+        $(function(){
+            $("#footer").load("footer.xhtml");
+        });
+    </script>
+</h:head>
+<h:body class="lightGreyBackground">
+    <div id="navbar"></div>
     <h:form>
-        <c:choose>
-            <c:when test="#{flowerDetails.flower.remainder gt 0}">
-                <h:outputText value="Price: #{flowerDetails.flower.price} "/> <br/>
-                <h:selectOneMenu value="#{flowerDetails.amount}">
-                    <f:selectItems value="#{flowerDetails.amountList}" var="i"
-                                   itemLabel="#{i}" itemValue="#{i}" />
-                </h:selectOneMenu>
-                <h:commandButton value="Add to cart"
-                                 action="#{cart.addToCart(flowerDetails.flower,
-                                 flowerDetails.amount)}">
-                    <f:param name="flowerId" value="#{flowerDetails.flower.id}" />
-                </h:commandButton>
-                <br/>
-            </c:when>
-            <c:otherwise>
-                <h:outputText value="Sold Out"/><br/>
-            </c:otherwise>
-        </c:choose>
+        <div class="lightGreyDiv">
+            <div class="thingy5">
+                <h2>#{flowerDetails.flower.name}:</h2>
+                <c:choose>
+                    <c:when test="#{flowerDetails.flower.remainder gt 0}">
+                        <h:outputText value="Price: #{flowerDetails.flower.price} "/> <br/>
+                        <h:selectOneMenu value="#{flowerDetails.amount}">
+                            <f:selectItems value="#{flowerDetails.amountList}" var="i"
+                                           itemLabel="#{i}" itemValue="#{i}" />
+                        </h:selectOneMenu>
+                        <h:commandButton value="Add to cart"
+                                         action="#{cart.addToCart(flowerDetails.flower,
+                                         flowerDetails.amount)}">
+                            <f:param name="flowerId" value="#{flowerDetails.flower.id}" />
+                        </h:commandButton>
+                        <br/>
+                    </c:when>
+                    <c:otherwise>
+                        <h:outputText value="Sold Out"/><br/>
+                    </c:otherwise>
+                </c:choose>
+            </div>
+        </div>
     </h:form>
+    <div id="footer"></div>
 </h:body>
 </html>
