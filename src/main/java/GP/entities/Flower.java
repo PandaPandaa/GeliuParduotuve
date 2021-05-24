@@ -29,6 +29,7 @@ public class Flower implements Serializable {
     @Column(name = "REMAINDER")
     private Integer remainder;
 
+    @Lob
     @Column(name = "FLOWER_PHOTO")
     private byte[] flowerPhoto;
 

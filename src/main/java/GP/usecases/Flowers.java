@@ -4,11 +4,11 @@ import GP.entities.Flower;
 import GP.enums.FlowerCategory;
 import GP.interfaces.FlowerProcessing;
 import GP.persistence.FlowersDAO;
+import GP.utilities.FileProcessing;
 import lombok.Getter;
 import lombok.Setter;
 import GP.interceptors.LoggedInvocation;
 
-import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 import java.util.LinkedHashMap;
@@ -17,6 +17,9 @@ import java.util.Map;
 
 @Model
 public class Flowers {
+
+    @Inject
+    private FileProcessing fileProcessing;
 
     @Inject
     private FlowersDAO flowersDAO;
@@ -29,6 +32,8 @@ public class Flowers {
 
     @LoggedInvocation
     public String AddFlower(){
+        flowerToAdd.setFlowerPhoto(fileProcessing.getPic());
+        fileProcessing.flush();
         return flowerProcessing.AddFlower(flowerToAdd);
     }
 
