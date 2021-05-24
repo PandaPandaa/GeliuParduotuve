@@ -8,55 +8,8 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cc321cf-ed0b-4da2-9925-61766a0cea28" name="Default Changelist" comment="base of the login and registration system">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70592349-b4b8-447d-8088-e8f50cde87cf.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70592349-b4b8-447d-8088-e8f50cde87cf/storage_v2/_src_/database/FLOWERSHOP.0ZuJUw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70592349-b4b8-447d-8088-e8f50cde87cf/storage_v2/_src_/database/FLOWERSHOP.0ZuJUw/schema/INFORMATION_SCHEMA.NBgcMw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70592349-b4b8-447d-8088-e8f50cde87cf/storage_v2/_src_/database/FLOWERSHOP.0ZuJUw/schema/PUBLIC.aaZQjQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70592349-b4b8-447d-8088-e8f50cde87cf/storage_v2/_src_/database/FLOWERSHOP.0ZuJUw/schema/PUBLIC.aaZQjQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlowerShop.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/FlowerShop.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlowerShop.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/FlowerShop.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/vu/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/vu/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/vu/usecases/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/vu/usecases/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shop-ds.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shop-ds.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/customer.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/customer.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/flowerDetails.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/flowerDetails.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.xhtml" afterDir="false" />
-    </list>
+    <list default="true" id="5cc321cf-ed0b-4da2-9925-61766a0cea28" name="Default Changelist" comment="base of the login and registration system" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,26 +22,11 @@
         <option value="Enum" />
         <option value="jsf" />
         <option value="Class" />
-        <option value="JavaScript File" />
-        <option value="CSS File" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProjectId" id="1qnVsJytrJ7w8OB0LKfk2QjB9fn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -100,23 +38,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="h2" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../java-ee-practice/pom.xml" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/shop.mv.db" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\bernardas.kukulskis\IdeaProjects\GeliuParduotuve3\src\main\webapp" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\java-ee-practice-master\src\main\webapp\WEB-INF" />
     </key>
@@ -129,18 +62,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JBoss 23.0.0.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 23.0.0.Final" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="15" nameIsGenerated="true">
+    <configuration name="JBoss 23.0.0.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 23.0.0.Final" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="java-ee-practice:war exploded">
@@ -320,14 +242,6 @@
       <workItem from="1619821184190" duration="64000" />
       <workItem from="1620137019638" duration="362000" />
       <workItem from="1620400114459" duration="389000" />
-      <workItem from="1621349275033" duration="237000" />
-      <workItem from="1621349525193" duration="186000" />
-      <workItem from="1621349726366" duration="404000" />
-      <workItem from="1621350147625" duration="121000" />
-      <workItem from="1621350284919" duration="20000" />
-      <workItem from="1621350335893" duration="2492000" />
-      <workItem from="1621668387335" duration="16984000" />
-      <workItem from="1621865336731" duration="4524000" />
     </task>
     <task id="LOCAL−00001" summary="start">
       <created>1618151428543</created>
@@ -370,19 +284,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -396,52 +298,6 @@
     <MESSAGE value="Added base cart functionality" />
     <MESSAGE value="New Database" />
     <option name="LAST_COMMIT_MESSAGE" value="New Database" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="440" y="94" key="#Project_Structure" timestamp="1621349315457">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="440" y="94" key="#Project_Structure/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621349315457" />
-    <state x="414" y="175" width="1092" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621680995752">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="414" y="175" width="1092" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621680995752" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1621351066250">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621351066250" />
-    <state width="1293" height="172" key="GridCell.Tab.0.bottom" timestamp="1621866306442">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1293" height="172" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621866306442" />
-    <state width="1293" height="172" key="GridCell.Tab.0.center" timestamp="1621866306442">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1293" height="172" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621866306442" />
-    <state width="1293" height="172" key="GridCell.Tab.0.left" timestamp="1621866306441">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1293" height="172" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621866306441" />
-    <state width="1293" height="172" key="GridCell.Tab.0.right" timestamp="1621866306442">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1293" height="172" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621866306442" />
-    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1621350525743">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621350525743" />
-    <state x="664" y="222" key="RollbackChangesDialog" timestamp="1621671130507">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="664" y="222" key="RollbackChangesDialog/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621671130507" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1621668923700">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621668923700" />
-    <state x="6" y="406" width="585" height="534" key="find.popup" timestamp="1621869008189">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="6" y="406" width="585" height="534" key="find.popup/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621869008189" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
