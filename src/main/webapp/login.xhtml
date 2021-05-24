@@ -1,17 +1,60 @@
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
->
-<h:head/>
-<h:body>
-    <h2>Login:</h2>
-    <h:form>
-        Email: <br/><h:inputText value="#{users.user.email}" required="true" /><br/>
-        Password: <br/><h:inputText value="#{users.user.password}" required="true" /><br/>
-        <h:commandButton value="Login" action="#{users.Login}" /><br/>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Sign in or Register | Flowershop</title>
+    <h:outputStylesheet library="css" name="default.css" />
+    <h:outputStylesheet library="loginCss" name="login.css" />
+    <h:outputScript library="js" name="homepage.js" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#navbar").load("navbar.xhtml");
+        });
+    </script>
+    <script>
+        $(function(){
+            $("#footer").load("footer.xhtml");
+        });
+    </script>
+</h:head>
+<h:body class="lightGreyBackground">
+    <div id="navbar"></div>
+    <!--composite component that comes from the navbar.xhtml file to avoid coding nav bar in all web pages-->
+<!--    <bookstore:navbar/>-->
+    <h:form class="ui form">
+        <div class="ui fluid">
+            <div class="lightGreyDiv">
+                <div class="thingy5">
+                    <h1 class="ui header">Sign in</h1>
+                    <div class="thingy6">
+                        <h:form>
+                        <div class="field">
+                            <h:outputLabel for="email" value="email"/>
+                            <h:inputText id="email" label="email" value="#{users.user.email}" required="true">
+                                <f:ajax event="change" render="emailError"/>
+                            </h:inputText>
+                            <br/>
+                            <h:message id="emailError" class="error" for="email"/>
+                        </div>
+                        <br/>
+                        <div class="field">
+                            <h:outputLabel for="password" value="Password"/>
+                            <h:inputSecret id="password" label="password" value="#{users.user.password}" required="true"/>
+                            <br/>
+                            <h:message class="error" for="password"/>
+                        </div>
+                            <h:commandButton value="Login" action="#{users.Login}" />
+                        </h:form>
+                        <br/>
+                        <a href="register.xhtml" class="signUpLink">create an account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </h:form>
-    <h:link outcome="register" value="Don't have an account?"/>
+    <div id="footer"></div>
 </h:body>
 </html>
