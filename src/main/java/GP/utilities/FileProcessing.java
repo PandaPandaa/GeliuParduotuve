@@ -16,6 +16,9 @@ import java.io.*;
 @GraphicImageBean
 public class FileProcessing implements Serializable {
 
+    @Inject
+    private FlowersDAO flowersDAO;
+
     @Getter @Setter
     private boolean uploaded = false;
 
@@ -73,11 +76,8 @@ public class FileProcessing implements Serializable {
         pic = new byte[]{};
     }
 
-    @Inject
-    private FlowersDAO flowersDAO;
-
     @Transactional
-    public byte[] getGetFlowerPicture(String id) {
+    public byte[] getFlowerPictureById(String id) {
         int i = Integer.parseInt(id);
         Flower a = flowersDAO.findOne(i);
         return a.getFlowerPhoto();
