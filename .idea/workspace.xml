@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="java-ee-practice:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:frontent-updates" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5cc321cf-ed0b-4da2-9925-61766a0cea28" name="Default Changelist" comment="base of the login and registration system">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlowerShop.mv.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlowerShop.trace.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/customer.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/customer.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Tag Library Descriptor" />
+        <option value="Enum" />
+        <option value="jsf" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/PandaPandaa/GeliuParduotuve" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1qnVsJytrJ7w8OB0LKfk2QjB9fn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="h2" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/shop.mv.db" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\java-ee-practice-master\src\main\webapp\WEB-INF" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn  mybatis-generator:generate" />
+      <command value="mvn clean install -U" />
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="JBoss 23.0.0.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 23.0.0.Final" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="java-ee-practice:war exploded">
+          <settings />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="SERVER" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" />
+        <option name="USERNAME" value="" />
+        <option name="CREDENTIAL_ALIAS" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="JBoss" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="2441" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="java-ee-practice:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 23.0.0.Final" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/java-ee-practice/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="java-ee-practice:war exploded">
+          <settings />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="SERVER" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" />
+        <option name="USERNAME" value="" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="JBoss" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="2441" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="java-ee-practice:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5cc321cf-ed0b-4da2-9925-61766a0cea28" name="Default Changelist" comment="" />
+      <created>1617715547343</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617715547343</updated>
+      <workItem from="1617715554616" duration="14000" />
+      <workItem from="1617715583936" duration="3145000" />
+      <workItem from="1617973705290" duration="1653000" />
+      <workItem from="1617978862904" duration="7367000" />
+      <workItem from="1617986558189" duration="2943000" />
+      <workItem from="1618063693470" duration="779000" />
+      <workItem from="1618064844310" duration="4429000" />
+      <workItem from="1618069436049" duration="724000" />
+      <workItem from="1618151201710" duration="5242000" />
+      <workItem from="1618156568271" duration="250000" />
+      <workItem from="1618156826194" duration="430000" />
+      <workItem from="1618157284794" duration="1821000" />
+      <workItem from="1618502440533" duration="3834000" />
+      <workItem from="1618526342053" duration="3459000" />
+      <workItem from="1618529816840" duration="807000" />
+      <workItem from="1619012150394" duration="36000" />
+      <workItem from="1619016856879" duration="4622000" />
+      <workItem from="1619021608942" duration="594000" />
+      <workItem from="1619022222953" duration="177000" />
+      <workItem from="1619022441078" duration="1130000" />
+      <workItem from="1619023668855" duration="70000" />
+      <workItem from="1619023991392" duration="937000" />
+      <workItem from="1619099805229" duration="268000" />
+      <workItem from="1619100650710" duration="5213000" />
+      <workItem from="1619106877525" duration="140000" />
+      <workItem from="1619800387064" duration="3000" />
+      <workItem from="1619821184190" duration="64000" />
+      <workItem from="1620137019638" duration="362000" />
+      <workItem from="1620400114459" duration="389000" />
+      <workItem from="1621871393403" duration="2075000" />
+      <workItem from="1621873505738" duration="417000" />
+    </task>
+    <task id="LOCAL−00001" summary="start">
+      <created>1618151428543</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1618151428543</updated>
+    </task>
+    <task id="LOCAL−00002" summary="base of the login and registration system">
+      <created>1618159099130</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1618159099130</updated>
+    </task>
+    <task id="LOCAL−00003" summary="Upgraded login/register functionality">
+      <created>1618527828195</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1618527828196</updated>
+    </task>
+    <task id="LOCAL−00004" summary="Added base cart functionality">
+      <created>1618530615486</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1618530615486</updated>
+    </task>
+    <task id="LOCAL−00005" summary="New Database">
+      <created>1620137094471</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1620137094471</updated>
+    </task>
+    <task id="LOCAL-00006" summary="base of the login and registration system">
+      <created>1621870860491</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1621870860491</updated>
+    </task>
+    <task id="LOCAL-00007" summary="merge conflict">
+      <created>1621871489500</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1621871489500</updated>
+    </task>
+    <task id="LOCAL-00008" summary="merge conflict">
+      <created>1621871508365</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1621871508365</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="frontent-updates" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="start" />
+    <MESSAGE value="Upgraded login/register functionality" />
+    <MESSAGE value="Added base cart functionality" />
+    <MESSAGE value="New Database" />
+    <MESSAGE value="base of the login and registration system" />
+    <MESSAGE value="merge conflict" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge conflict" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621873925107">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621873925107" />
+    <state x="691" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1621873631089">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="691" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621873631089" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1621870967829">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621870967829" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1621873916580">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621873916580" />
+    <state width="1293" height="273" key="GridCell.Tab.0.bottom" timestamp="1621873925493">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621873925493" />
+    <state width="1293" height="273" key="GridCell.Tab.0.center" timestamp="1621873925493">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="273" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621873925493" />
+    <state width="1293" height="273" key="GridCell.Tab.0.left" timestamp="1621873925493">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="273" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621873925493" />
+    <state width="1293" height="273" key="GridCell.Tab.0.right" timestamp="1621873925493">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="273" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621873925493" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1621872900300">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621872900300" />
+    <state x="184" y="86" key="MergeDialog" timestamp="1621870832576">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621870832576" />
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1621870832582">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621870832582" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1621871516399">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621871516399" />
+    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1621873574252">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040/-1920.8.1920.1160@0.0.1920.1040" timestamp="1621873574252" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

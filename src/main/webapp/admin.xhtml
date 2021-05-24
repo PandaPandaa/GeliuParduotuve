@@ -3,27 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
 >
-<h:head/>
-<h:body>
-    <h:form>
-        <h:commandButton value="Log Out" action="#{users.LogOut}" /><br/>
-    </h:form>
-    <h2>Flowers:</h2>
-    <ol>
-        <ui:repeat value="#{flowers.allFlowers}" var="flower">
-            <li>#{flower.name}</li>
-        </ui:repeat>
-    </ol>
-    <h3>Add new flower:</h3>
-    <h:form>
-        Flower's name: <br/><h:inputText value="#{flowers.flowerToAdd.name}" required="true" /><br/>
-        Flower's price: <br/><h:inputText value="#{flowers.flowerToAdd.price}" required="true" /><br/>
-        Flower's remainder: <br/><h:inputText value="#{flowers.flowerToAdd.remainder}" required="true" /><br/>
-        <h:commandButton value="Add new flower" action="#{flowers.AddFlower}" /><br/>
-        <h:commandButton value="change details" action="#{users.UpdateCurrentUser}" /><br/>
-        <h:outputText value="OPTIMISTIC lock" rendered="#{param['error'] == 'optimistic-lock-exception'}" />
-        <h:outputText value="Flower will be added shortly" rendered="#{param['message'] == 'addingflower'}" />
-    </h:form>
-</h:body>
+
+
+<h:head>
+    <h:outputStylesheet library="css" name="default.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#navbar").load("navbar.xhtml");
+        });
+    </script>
+    <script>
+        $(function(){
+            $("#footer").load("footer.xhtml");
+        });
+    </script>
+</h:head>
+    <h:body class="lightGreyBackground">
+        <c:choose>
+            <c:when test="#{currentUser.currentUser.type == 'ADMIN'}">
+            <div id="navbar"></div>
+            <h2>Flowers:</h2>
+            <ol>
+                <ui:repeat value="#{flowers.loadAllFlowers()}" var="flower">
+                    <li>#{flower.name}</li>
+                </ui:repeat>
+            </ol>
+            <h3>Add new flower:</h3>
+            <h:form>
+                Flower's name: <br/><h:inputText value="#{flowers.flowerToAdd.name}" required="true" /><br/>
+                Flower's price: <br/><h:inputText value="#{flowers.flowerToAdd.price}" required="true" /><br/>
+                Flower's remainder: <br/><h:inputText value="#{flowers.flowerToAdd.remainder}" required="true" /><br/>
+                <h:commandButton value="Add new flower" action="#{flowers.AddFlower}" /><br/>
+            </h:form>
+            <div id="footer"></div>
+            </c:when>
+        </c:choose>
+        <c:otherwise>
+            <div>
+                You have no permission to access this site
+            </div>
+        </c:otherwise>
+    </h:body>
 </html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,230 @@
+/*
+ Defines styling for the home page components
+*/
+/*
+    Created on : Feb. 4, 2020, 9:28:27 p.m.
+    Author     : Shruti
+*/
+*{
+    font-family: 'Roboto', sans-serif !important;
+}
+html, body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-size: 14px;
+    color:#000;
+    margin: 0;
+    padding: 0;
+}
+p.small,h3.small {
+    font-variant: small-caps;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.lightOrangeDiv{
+    padding:5%;
+    background-color: #D8B4A0;
+}
+.lightGreyDiv{
+    padding:5%;
+    background-color: #EFF1F3 !important;
+}
+.lightPurpleDiv{
+    padding:5%;
+    background-color: #DBD3DB;
+
+}
+.darkBlueDiv{
+    padding:5%;
+    background-color: #223843 !important;
+}
+.homepageCard{
+    box-shadow: 5px 10px 8px black !important;
+
+}
+.homepageImg:hover .cardHoverBtn{
+    opacity: 1;
+}
+.homepageImg{
+
+    text-align: center;
+    /*border:2px solid black;*/
+    background-color: #223843;
+
+}
+.nav {
+    margin: 0 auto 0 10px;
+
+}
+.brand-img-style {
+    height: 100%;
+    width: auto;
+}
+.headMenu{
+    margin-bottom: 0 !important;
+    background-color: #D77A61 !important;
+    border:none !important;
+    border-radius: 0 !important;
+}
+.white
+{
+    color: white;
+}
+/*makes book cards darker on hover*/
+.darker:hover {
+    -webkit-filter:brightness(50%);
+    -moz-filter:brightness(50%);
+    filter: url(#brightness);
+    filter:brightness(70%);
+}
+.cardHoverBtn{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    display:block;
+    border:2px solid black;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .50s ease;
+}
+
+.cardHoverBtn:hover {
+    background-color: grey;
+    cursor: pointer;
+}
+
+.lightGreyBackground{
+    background-color: #EFF1F3 !important;
+}
+
+.thingy5{
+    background-color: white;
+    padding: 3%;
+    width: 80%;
+    margin: 0 auto;
+    border: 0.5px solid grey;
+}
+
+.textColor{
+    color:black !important;
+    font-family: georgia !important;
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 992px){
+    .ui.longer.modal {
+        position: fixed;
+        top: 20%;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .ui.longer.modal {
+        position: fixed;
+        top: 20%;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .ui.modal {
+        width: 95%;
+        margin: 0;
+
+    }
+}
+
+.lightGreyDiv{
+    padding:5%;
+    background-color: #EFF1F3 !important;
+}
+
+.modal {
+
+    display: none;
+    overflow: auto !important;
+    position: fixed;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    z-index: 1050;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+
+}
+#myImg {
+
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+/* The Close Button */
+.close {
+
+
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white !important;
+    font-size: 50px !important;
+    transition: 0.3s;
+    opacity: 1 !important;
+    color: rgba(0,0,0,.87) !important;
+}
+
+.close:hover,
+.close:focus {
+
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.header h1 {
+    text-align: center !important;
+}
+.purpleContainer{
+    background-color: #DBD3DB;
+    height:90%;
+}
+.salePrice{
+    color:red !important;
+}
+.oldPrice{
+    text-decoration: line-through;
+}
+.error{
+    color: darkred;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.footerHelpLink{
+    text-align: center;
+    font-size:14px;
+    color: white;
+}
+.languageOption{
+    border:0px !important;
+    font-weight: bold !important;
+}
+
+.fullName{
+    margin-top: 3px;
+    margin-right: 20px;
+}
