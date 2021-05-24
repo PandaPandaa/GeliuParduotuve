@@ -21,15 +21,18 @@ import java.time.LocalDateTime;
 public class MethodLogger implements Serializable{
 
     @Inject
+    private CurrentUser currentUser;
+
+    @Inject
     private Instance<LoggerDAO> loggerDAO;
 
     @AroundInvoke
     public Object logMethodInvocation(InvocationContext context) throws Exception {
-        String id;
+        String id = "";
         FileWriter logger = new FileWriter("log.txt");
-        if(CurrentUser.currentUser.getId() != null)
+        if(currentUser.getCurrentUser().getId() != null)
         {
-            id = CurrentUser.currentUser.getId().toString();
+            id = currentUser.getCurrentUser().getId().toString();
             logger.write("TIME = " + LocalDateTime.now() +
                     " CLASS = " + context.getMethod().getDeclaringClass().getName() +
                     " METHOD = " + context.getMethod().getName() +

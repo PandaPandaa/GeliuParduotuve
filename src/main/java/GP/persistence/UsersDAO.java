@@ -16,6 +16,8 @@ public class UsersDAO {
         this.em.persist(user);
     }
 
+    public User findOne(Integer id){ return em.find(User.class, id); }
+
     public User findByEmail(String email)
     {
         return (User)em.createQuery("Select u From User u " +

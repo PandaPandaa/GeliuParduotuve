@@ -2,10 +2,12 @@ package GP.persistence;
 
 import GP.entities.Flower;
 import GP.entities.Order;
+import GP.entities.User;
 import GP.enums.FlowerCategory;
 import GP.usecases.CurrentUser;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -32,8 +34,8 @@ public class OrdersDAO {
     }
 
     @SuppressWarnings("unchecked")
-    public List<Order> loadByCurrentUser() {
+    public List<Order> loadByCurrentUser(User currentUser) {
         return em.createQuery("Select o From Order o " +
-                "Where o.user = :user ").setParameter("user", CurrentUser.currentUser).getResultList();
+                "Where o.user = :user ").setParameter("user", currentUser).getResultList();
     }
 }

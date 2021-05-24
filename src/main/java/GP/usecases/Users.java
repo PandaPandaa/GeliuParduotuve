@@ -65,13 +65,36 @@ public class Users {
         try {
             if(currentUser.isLoggedIn())
             {
-                currentUser.getCurrentUser().setName(user.getName());
-                currentUser.getCurrentUser().setEmail(user.getEmail());
-                currentUser.getCurrentUser().setPassword(user.getPassword());
-                usersDAO.update(currentUser.getCurrentUser());
+                user.setId(currentUser.getCurrentUser().getId());
+                user.setVersion(currentUser.getCurrentUser().getVersion());
+                currentUser.setCurrentUser(usersDAO.update(user));
             }
         } catch (OptimisticLockException e) {
             return currentUser.getCurrentUser().getType().toString().toLowerCase(Locale.ROOT) + "?faces-redirect=true" + "&error=optimistic-lock-exception";
+        }
+        return currentUser.getCurrentUser().getType().toString().toLowerCase(Locale.ROOT) + "?faces-redirect=true";
+    }
+
+    @LoggedInvocation
+    @Transactional
+    public String OverwriteCurrentUser()
+    {
+        if(currentUser.isLoggedIn()) {
+            User u = usersDAO.findOne(currentUser.getCurrentUser().getId());
+            u.setName(user.getName());
+            u.setEmail(user.getEmail());
+            u.setPassword(user.getPassword());
+            currentUser.setCurrentUser(usersDAO.update(u));
+        }
+        return currentUser.getCurrentUser().getType().toString().toLowerCase(Locale.ROOT) + "?faces-redirect=true";
+    }
+
+    @LoggedInvocation
+    @Transactional
+    public String ReloadCurrentUser()
+    {
+        if(currentUser.isLoggedIn()) {
+            currentUser.setCurrentUser(usersDAO.findOne(currentUser.getCurrentUser().getId()));
         }
         return currentUser.getCurrentUser().getType().toString().toLowerCase(Locale.ROOT) + "?faces-redirect=true";
     }
