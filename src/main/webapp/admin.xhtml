@@ -4,6 +4,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui"
 >
 
 
@@ -32,10 +33,11 @@
                 </ui:repeat>
             </ol>
             <h3>Add new flower:</h3>
-            <h:form>
+            <h:form enctype="multipart/form-data">
                 Flower's name: <br/><h:inputText value="#{flowers.flowerToAdd.name}" required="true" /><br/>
                 Flower's price: <br/><h:inputText value="#{flowers.flowerToAdd.price}" required="true" /><br/>
                 Flower's remainder: <br/><h:inputText value="#{flowers.flowerToAdd.remainder}" required="true" /><br/>
+                <p:fileUpload value="#{flowers.photoFile}" mode="simple" />
                 <h:commandButton value="Add new flower" action="#{flowers.AddFlower}" /><br/>
             </h:form>
             <div id="footer"></div>

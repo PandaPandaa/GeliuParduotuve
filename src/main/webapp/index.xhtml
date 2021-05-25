@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:c="http://java.sun.com/jsp/jstl/core">
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>The FlowerStore</title>
@@ -26,13 +27,34 @@
     <div class="lightGreyDiv">
         <div class="thingy5">
             <h2>Flowers:</h2>
-            <ol>
-                <ui:repeat value="#{flowers.loadAllFlowers()}" var="flower">
-                    <li>
-                        <h:link value="#{flower.name}" outcome="flowerDetails?flowerId=#{flower.id}" />
-                    </li>
-                </ui:repeat>
-            </ol>
+<!--            <ol>-->
+            <h:form>
+                <p:dataGrid var="product" value="#{flowers.loadAllFlowers()}" columns="3" layout="grid"
+                            rows="12" paginator="true" id="cars"
+                            paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                            rowsPerPageTemplate="6,12,16">
+                    <f:facet name="header">
+                        Flowers:
+                    </f:facet>
+
+                    <div class="product-grid-item card" style="margin-bottom: 0">
+                        <div class="product-grid-item-top">
+                            <div>
+                                <i class="pi pi-tag product-category-icon"/>
+                            </div>
+                        </div>
+                        <div class="product-grid-item-content">
+                            <p:graphicImage value="#{fileProcessing.getFlowerPictureById(product.id)}" stream="false"/>
+                            <div class="product-name">#{product.name}</div>
+                        </div>
+                        <div class="product-grid-item-bottom">
+                            <h:outputText value="#{product.price}" styleClass="product-price">
+                                <f:convertNumber currencySymbol="$" type="currency"/>
+                            </h:outputText>
+                        </div>
+                    </div>
+                </p:dataGrid>
+            </h:form>
             <h:form>
                 <h:commandButton value="Place Order" action="#{orderController.PlaceOrder(cart.orderInfos)}" />
             </h:form><br/>

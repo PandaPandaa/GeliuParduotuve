@@ -1,41 +1,28 @@
 package GP.usecases;
 
 import GP.entities.Flower;
-import GP.interfaces.FlowerProcessing;
 import GP.persistence.FlowersDAO;
 import GP.utilities.OrderInfo;
 
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
-@Alternative
 @Named
 @RequestScoped
-public class IntenseFlowerProcessing implements Serializable, FlowerProcessing {
+public class FlowerProcessing implements Serializable {
 
     @Inject
     private FlowersDAO flowersDAO;
 
+    @Transactional
     public String AddFlower(Flower flower)
     {
-        CompletableFuture.runAsync(() -> ProcessFlowerAdding(flower));
-
-        return "admin?faces-redirect=true&message=addingflower";
-    }
-
-    @Transactional(Transactional.TxType.REQUIRES_NEW)
-    public void ProcessFlowerAdding(Flower flower) {
-        try{
-            Thread.sleep(10000);
-        } catch (InterruptedException ignored){
-        }
         flowersDAO.persist(flower);
+        return "admin?faces-redirect=true&message=addingflower";
     }
 
     @Transactional

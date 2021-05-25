@@ -3,6 +3,7 @@ package GP.entities;
 import GP.enums.FlowerCategory;
 import lombok.Getter;
 import lombok.Setter;
+import org.primefaces.model.file.UploadedFile;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,7 +11,7 @@ import java.util.Objects;
 
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "Flower.findAll", query = "select f.id, f.name, f.price, f.remainder, f.flowerCategory from Flower f")
+        @NamedQuery(name = "Flower.findAll", query = "select f from Flower as f")
 })
 @Table(name = "FLOWERS")
 @Getter @Setter
@@ -33,10 +34,22 @@ public class Flower implements Serializable {
     @Column(name = "FLOWER_PHOTO")
     private byte[] flowerPhoto;
 
+    public void setFlowerPhoto(UploadedFile file)
+    {
+        byte[] array = new byte[file.getContent().length];
+        System.arraycopy(file.getContent(),0,array,0,file.getContent().length);
+        this.flowerPhoto = array;
+    }
+
     @Column(name = "CATEGORY")
     private FlowerCategory flowerCategory;
 
     public Flower() {
+    }
+
+    public Flower(Integer id, String name) {
+        this.setId(id);
+        this.setName(name);
     }
 
     @Override

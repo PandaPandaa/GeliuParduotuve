@@ -2,24 +2,21 @@ package GP.usecases;
 
 import GP.entities.Flower;
 import GP.enums.FlowerCategory;
-import GP.interfaces.FlowerProcessing;
 import GP.persistence.FlowersDAO;
-import GP.utilities.FileProcessing;
 import lombok.Getter;
 import lombok.Setter;
 import GP.interceptors.LoggedInvocation;
+import org.primefaces.model.file.UploadedFile;
 
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 @Model
 public class Flowers {
-
-    @Inject
-    private FileProcessing fileProcessing;
 
     @Inject
     private FlowersDAO flowersDAO;
@@ -30,14 +27,17 @@ public class Flowers {
     @Getter @Setter
     private Flower flowerToAdd = new Flower();
 
+    @Getter @Setter
+    private UploadedFile photoFile;
+
     @LoggedInvocation
     public String AddFlower(){
-        flowerToAdd.setFlowerPhoto(fileProcessing.getPic());
-        fileProcessing.flush();
+        flowerToAdd.setFlowerPhoto(photoFile);
         return flowerProcessing.AddFlower(flowerToAdd);
     }
 
     @LoggedInvocation
+    @Transactional
     public List<Flower> loadAllFlowers(){
         return flowersDAO.loadAll();
     }

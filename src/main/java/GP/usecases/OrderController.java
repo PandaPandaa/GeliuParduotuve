@@ -1,11 +1,10 @@
 package GP.usecases;
 
-import GP.interfaces.FlowerProcessing;
+import GP.interfaces.PaymentController;
 import GP.entities.Order;
 import GP.enums.OrderStatus;
 import GP.interceptors.LoggedInvocation;
 import GP.persistence.OrdersDAO;
-import GP.utilities.OrderInfo;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -13,12 +12,16 @@ import javax.inject.Named;
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @LoggedInvocation
 @Named
 @RequestScoped
 public class OrderController
 {
+    @Inject
+    private Cart cart;
+
     @Inject
     private OrdersDAO ordersDAO;
 
@@ -28,15 +31,29 @@ public class OrderController
     @Inject
     private FlowerProcessing flowerProcessing;
 
+    @Inject
+    private PaymentController paymentController;
+
     @Transactional
-    public void PlaceOrder(List<OrderInfo> orderInfos)
+    public void PlaceOrder(String address, String message)
+    {
+        if(paymentController.pay())
+        {
+            CompletableFuture.runAsync(() -> processOrder(address, message));
+        }
+    }
+
+    @Transactional
+    public void processOrder(String address, String message)
     {
         Order order = new Order();
         order.setDate(LocalDateTime.now());
         order.setUser(currentUser.isLoggedIn() ? currentUser.getCurrentUser() : null);
         order.setStatus(OrderStatus.ACCEPTED);
-        order.setOrderInfo(orderInfos);
-        flowerProcessing.ReduceFlowerRemainder(orderInfos);
+        order.setOrderInfo(cart.getOrderInfos());
+        order.setAddress(address);
+        order.setMessage(message);
+        flowerProcessing.ReduceFlowerRemainder(cart.getOrderInfos());
         ordersDAO.persist(order);
     }
 

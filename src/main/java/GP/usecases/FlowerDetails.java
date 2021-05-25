@@ -19,7 +19,7 @@ public class FlowerDetails {
     @Inject
     private FlowersDAO flowersDAO;
 
-    @Getter
+    @Getter @Setter
     private Flower flower;
 
     @Getter @Setter

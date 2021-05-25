@@ -38,6 +38,12 @@ public class Order implements Serializable {
     @Column(name = "INFO")
     private String orderInfo;
 
+    @Column(name = "MESSAGE")
+    private String message;
+
+    @Column(name = "ADDRESS")
+    private String address;
+
     public Order() {
     }
 

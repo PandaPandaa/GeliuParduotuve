@@ -10,6 +10,6 @@
         <class>GP.interceptors.MethodLogger</class>
     </interceptors>
     <alternatives>
-        <class>GP.usecases.IntenseFlowerProcessing</class>
+        <class>GP.usecases.SimplePaymentController</class>
     </alternatives>
 </beans>
