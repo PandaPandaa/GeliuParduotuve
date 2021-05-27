@@ -36,6 +36,7 @@ public class Flowers {
         return flowerProcessing.AddFlower(flowerToAdd);
     }
 
+    @Transactional
     @LoggedInvocation
     @Transactional
     public List<Flower> loadAllFlowers(){

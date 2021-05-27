@@ -225,6 +225,8 @@ p.small,h3.small {
 }
 
 .fullName{
-    margin-top: 3px;
     margin-right: 20px;
+}
+.logout{
+    margin-top:3px;
 }
