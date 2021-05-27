@@ -30,10 +30,10 @@
             <ul class="navbar-nav my-2 my-lg-0">
                 <c:choose>
                     <c:when test="#{currentUser.loggedIn}">
-                        <li class="nav-item fullName text-white">
-                            Hello, #{currentUser.currentUser.name}
+                        <li class="nav-item fullName">
+                            <a class="nav-link text-white" href="./userSettings.xhtml">Profile</a>
                         </li>
-                        <h:form>
+                        <h:form styleClass="logout">
                             <h:commandButton value="Log Out" action="#{users.LogOut}" />
                         </h:form><br/>
                     </c:when>

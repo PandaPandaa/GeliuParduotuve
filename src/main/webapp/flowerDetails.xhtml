@@ -32,7 +32,7 @@
                                            itemLabel="#{i}" itemValue="#{i}" />
                         </h:selectOneMenu>
                         <h:commandButton value="Add to cart"
-                                         action="#{cart.addToCart(flowerDetails.flower,
+                                         action="#{cartController.addToCart(flowerDetails.flower,
                                          flowerDetails.amount)}">
                             <f:param name="flowerId" value="#{flowerDetails.flower.id}" />
                         </h:commandButton>

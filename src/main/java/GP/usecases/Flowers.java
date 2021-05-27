@@ -11,6 +11,7 @@ import GP.interceptors.LoggedInvocation;
 
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +38,7 @@ public class Flowers {
         return flowerProcessing.AddFlower(flowerToAdd);
     }
 
+    @Transactional
     @LoggedInvocation
     public List<Flower> loadAllFlowers(){
         return flowersDAO.loadAll();
