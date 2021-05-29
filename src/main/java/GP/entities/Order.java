@@ -10,6 +10,7 @@ import GP.utilities.OrderInfo;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Objects;
 
@@ -45,6 +46,12 @@ public class Order implements Serializable {
     private String address;
 
     public Order() {
+    }
+
+    public String getDate()
+    {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        return date.format(formatter);
     }
 
     public List<OrderInfo> getOrderInfo() {
