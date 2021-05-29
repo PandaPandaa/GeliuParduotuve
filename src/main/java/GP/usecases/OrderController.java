@@ -78,6 +78,11 @@ public class OrderController
         return ordersDAO.loadAll();
     }
 
+    public List<Order> loadCurrentUserOrders()
+    {
+        return ordersDAO.loadByCurrentUser(currentUser.getCurrentUser());
+    }
+
     public Map<String, OrderStatus> getOrderStatusMap()
     {
         Map<String, OrderStatus> map = new LinkedHashMap<String, OrderStatus>();

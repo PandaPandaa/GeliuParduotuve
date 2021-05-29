@@ -18,6 +18,14 @@
                         <li class="nav-item active">
                             <a class="nav-link text-white" href="./admin.xhtml">Add flowers</a>
                         </li>
+                        <li class="nav-item active">
+                            <a class="nav-link text-white" href="./allOrders.xhtml">Gauti užsakymai</a>
+                        </li>
+                    </c:when>
+                    <c:when test="#{currentUser.currentUser.type == 'CUSTOMER'}">
+                        <li class="nav-item active">
+                            <a class="nav-link text-white" href="./userOrders.xhtml">Mano užsakymai</a>
+                        </li>
                     </c:when>
                 </c:choose>
                 <li class="nav-item active">

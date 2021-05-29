@@ -26,7 +26,6 @@
         <c:choose>
             <c:when test="#{currentUser.currentUser.type == 'ADMIN'}">
             <div id="navbar"></div>
-            <h:link value="Peržiūrėti gautus užsakymus" outcome="allOrders" />
             <h2>Flowers:</h2>
             <ol>
                 <ui:repeat value="#{flowers.loadAllFlowers()}" var="flower">
