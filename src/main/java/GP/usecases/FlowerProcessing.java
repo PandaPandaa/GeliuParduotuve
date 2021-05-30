@@ -1,8 +1,12 @@
 package GP.usecases;
 
 import GP.entities.Flower;
+import GP.interceptors.LoggedInvocation;
 import GP.persistence.FlowersDAO;
 import GP.utilities.OrderInfo;
+import lombok.Getter;
+import lombok.Setter;
+import org.primefaces.model.file.UploadedFile;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -18,14 +22,23 @@ public class FlowerProcessing implements Serializable {
     @Inject
     private FlowersDAO flowersDAO;
 
+    @Getter
+    @Setter
+    private Flower flowerToAdd = new Flower();
+
+    @Getter @Setter
+    private UploadedFile photoFile;
+
+    @LoggedInvocation
     @Transactional
-    public String AddFlower(Flower flower)
+    public String AddFlower()
     {
-        flowersDAO.persist(flower);
+        flowerToAdd.setFlowerPhoto(photoFile);
+        flowersDAO.persist(flowerToAdd);
         return "admin?faces-redirect=true&message=addingflower";
     }
 
-    @Transactional
+    @Transactional(Transactional.TxType.REQUIRES_NEW)
     public void ReduceFlowerRemainder(List<OrderInfo> orderInfos)
     {
         for (OrderInfo o:

@@ -42,6 +42,9 @@ public class Order implements Serializable {
     @Column(name = "MESSAGE")
     private String message;
 
+    @Column(name = "RECEIVER_NAME")
+    private String receiverName;
+
     @Column(name = "ADDRESS")
     private String address;
 

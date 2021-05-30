@@ -34,11 +34,11 @@
             </ol>
             <h3>Add new flower:</h3>
             <h:form enctype="multipart/form-data">
-                Flower's name: <br/><h:inputText value="#{flowers.flowerToAdd.name}" required="true" /><br/>
-                Flower's price: <br/><h:inputText value="#{flowers.flowerToAdd.price}" required="true" /><br/>
-                Flower's remainder: <br/><h:inputText value="#{flowers.flowerToAdd.remainder}" required="true" /><br/>
-                <p:fileUpload value="#{flowers.photoFile}" mode="simple" />
-                <h:commandButton value="Add new flower" action="#{flowers.AddFlower}" /><br/>
+                Flower's name: <br/><h:inputText value="#{flowerProcessing.flowerToAdd.name}" required="true" /><br/>
+                Flower's price: <br/><h:inputText value="#{flowerProcessing.flowerToAdd.price}" required="true" /><br/>
+                Flower's remainder: <br/><h:inputText value="#{flowerProcessing.flowerToAdd.remainder}" required="true" /><br/>
+                <p:fileUpload value="#{flowerProcessing.photoFile}" mode="simple" />
+                <h:commandButton value="Add new flower" action="#{flowerProcessing.AddFlower}" /><br/>
             </h:form>
             <div id="footer"></div>
             </c:when>

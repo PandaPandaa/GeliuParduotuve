@@ -28,7 +28,7 @@
             <div id="navbar"></div>
             <h2>Gauti užsakymai:</h2>
 
-            <h:dataTable value = "#{orderController.loadAllOrders()}" var = "order"
+            <h:dataTable value = "#{orders.loadAllOrders()}" var = "order"
                          border="3" cellpadding="3" cellspacing="3">
 
                 <h:column>
@@ -54,7 +54,7 @@
                 <h:column>
                     <f:facet name = "header">Statusas</f:facet>
                     <h:form>
-                        <h:commandButton value="#{order.status}" action="#{orderController.upogradeOrderStatus(order.id)}"/>
+                        <h:commandButton value="#{order.status}" action="#{orderController.upgradeOrderStatus(order.id)}"/>
                     </h:form>
                 </h:column>
 

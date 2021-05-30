@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Sign in or Register | Flowershop</title>
+    <h:outputStylesheet library="css" name="default.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#navbar").load("navbar.xhtml");
+        });
+    </script>
+    <script>
+        $(function(){
+            $("#footer").load("footer.xhtml");
+        });
+    </script>
+</h:head>
+<h:body class="lightGreyBackground">
+    <div id="navbar"></div>
+    <div class="lightGreyDiv">
+        <div class="thingy5">
+            <h2>Krepšelyje:</h2>
+            <h:dataTable value = "#{cart.orderInfos}" var = "info"
+                         border="3" cellpadding="3" cellspacing="3">
+                <h:column>
+                    <f:facet name = "header">Pavadinimas</f:facet>
+                    #{info.flowerName}
+                </h:column>
+
+                <h:column>
+                    <f:facet name = "header">Vieneto kaina</f:facet>
+                    #{info.flowerPrice}
+                </h:column>
+
+                <h:column>
+                    <f:facet name = "header">Kiekis</f:facet>
+                    #{info.flowerAmount}
+                </h:column>
+
+                <h:column>
+                    <f:facet name = "header">Kaina</f:facet>
+                    #{info.flowerAmount * info.flowerPrice}
+                </h:column>
+            </h:dataTable><br/>
+            <h:dataTable value = "#{orders.orderPrice}" var="price"
+                         border="3" cellpadding="3" cellspacing="3">
+                <h:column>
+                    <f:facet name = "header">Galutinė kaina:</f:facet>
+                    #{price}
+                </h:column>
+            </h:dataTable><br/>
+            <h:form>
+                Gavėjo vardas ir pavardė:<br/>
+                <h:inputText value="#{orderController.orderToCreate.receiverName}" required="true"/><br/>
+                Gavėjo adresas:<br/>
+                <h:inputText value="#{orderController.orderToCreate.address}" required="true"/><br/>
+                Žinutė gavėjui (nebūtina):<br/>
+                <h:inputText value="#{orderController.orderToCreate.message}" required="false"/><br/>
+                <h:commandButton value="Apmokėti" action="#{orderController.PlaceOrder(currentUser.currentUser, cart.orderInfos)}"/>
+            </h:form>
+        </div>
+    </div>
+    <div id="footer"></div>
+</h:body>
+</html>

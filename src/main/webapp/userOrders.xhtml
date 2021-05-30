@@ -24,9 +24,9 @@
 </h:head>
 <h:body class="lightGreyBackground">
     <div id="navbar"></div>
-    <h2>Gauti užsakymai:</h2>
+    <h2>Mano užsakymai:</h2>
 
-    <h:dataTable value = "#{orderController.loadCurrentUserOrders}" var = "order"
+    <h:dataTable value = "#{orders.loadCurrentUserOrders()}" var = "order"
                  border="3" cellpadding="3" cellspacing="3">
 
         <h:column>

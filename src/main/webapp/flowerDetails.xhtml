@@ -20,12 +20,12 @@
 </h:head>
 <h:body class="lightGreyBackground">
     <div id="navbar"></div>
-    <h:form>
-        <div class="lightGreyDiv">
-            <div class="thingy5">
-                <h2>#{flowerDetails.flower.name}:</h2>
-                <c:choose>
-                    <c:when test="#{flowerDetails.flower.remainder gt 0}">
+    <div class="lightGreyDiv">
+        <div class="thingy5">
+            <h2>#{flowerDetails.flower.name}:</h2>
+            <c:choose>
+                <c:when test="#{flowerDetails.flower.remainder gt 0}">
+                    <h:form>
                         <h:outputText value="Price: #{flowerDetails.flower.price} "/> <br/>
                         <h:selectOneMenu value="#{flowerDetails.amount}">
                             <f:selectItems value="#{flowerDetails.amountList}" var="i"
@@ -36,15 +36,14 @@
                                          flowerDetails.amount)}">
                             <f:param name="flowerId" value="#{flowerDetails.flower.id}" />
                         </h:commandButton>
-                        <br/>
-                    </c:when>
-                    <c:otherwise>
-                        <h:outputText value="Sold Out"/><br/>
-                    </c:otherwise>
-                </c:choose>
-            </div>
+                    </h:form>
+                </c:when>
+                <c:otherwise>
+                    <h:outputText value="Sold Out"/><br/>
+                </c:otherwise>
+            </c:choose>
         </div>
-    </h:form>
+    </div>
     <div id="footer"></div>
 </h:body>
 </html>

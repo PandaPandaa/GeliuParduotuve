@@ -22,13 +22,39 @@
         <div id="navbar"></div>
         <div class="lightGreyDiv">
             <div class="thingy5">
-                <h2>My Cart</h2>
-                <ol>
-                    <ui:repeat value="#{flowers.loadAllFlowers()}" var="flower">
-                        <li>#{flower.name}</li>
-                    </ui:repeat>
+                <h2>Krepšelyje:</h2>
+                <h:dataTable value = "#{cart.orderInfos}" var = "info"
+                             border="3" cellpadding="3" cellspacing="3">
+                    <h:column>
+                        <f:facet name = "header">Pavadinimas</f:facet>
+                        #{info.flowerName}
+                    </h:column>
 
-                </ol>
+                    <h:column>
+                        <f:facet name = "header">Vieneto kaina</f:facet>
+                        #{info.flowerPrice}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Kiekis</f:facet>
+                        #{info.flowerAmount}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Kaina</f:facet>
+                        #{info.flowerAmount * info.flowerPrice}
+                    </h:column>
+                </h:dataTable><br/>
+                <h:dataTable value = "#{orders.orderPrice}" var="price"
+                        border="3" cellpadding="3" cellspacing="3">
+                    <h:column>
+                        <f:facet name = "header">Galutinė kaina:</f:facet>
+                        #{price}
+                    </h:column>
+                </h:dataTable><br/>
+                <h:form>
+                    <h:commandButton value="Pateikti užsakymą" action="orderPlacement" />
+                </h:form>
             </div>
         </div>
         <div id="footer"></div>

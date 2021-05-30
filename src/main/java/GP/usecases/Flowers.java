@@ -21,21 +21,6 @@ public class Flowers {
     @Inject
     private FlowersDAO flowersDAO;
 
-    @Inject
-    private FlowerProcessing flowerProcessing;
-
-    @Getter @Setter
-    private Flower flowerToAdd = new Flower();
-
-    @Getter @Setter
-    private UploadedFile photoFile;
-
-    @LoggedInvocation
-    public String AddFlower(){
-        flowerToAdd.setFlowerPhoto(photoFile);
-        return flowerProcessing.AddFlower(flowerToAdd);
-    }
-
     @LoggedInvocation
     @Transactional
     public List<Flower> loadAllFlowers(){

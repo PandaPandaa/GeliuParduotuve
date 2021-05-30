@@ -1,29 +1,31 @@
 package GP.usecases;
 
-import GP.entities.Flower;
-import GP.enums.FlowerCategory;
-import GP.interfaces.PaymentController;
 import GP.entities.Order;
+import GP.entities.User;
 import GP.enums.OrderStatus;
-import GP.interceptors.LoggedInvocation;
+import GP.interfaces.PaymentController;
 import GP.persistence.OrdersDAO;
+import GP.utilities.OrderInfo;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.enterprise.context.RequestScoped;
-import javax.faces.model.DataModel;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
+import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
-@LoggedInvocation
 @Named
 @RequestScoped
-public class OrderController
-{
+public class OrderController implements Serializable {
+
+    @Inject
+    private CurrentUser currentUser;
+
     @Inject
     private Cart cart;
 
@@ -31,37 +33,32 @@ public class OrderController
     private OrdersDAO ordersDAO;
 
     @Inject
-    private CurrentUser currentUser;
-
-    @Inject
     private FlowerProcessing flowerProcessing;
 
     @Inject
     private PaymentController paymentController;
 
-    private DataModel<Order> model;
+    @Getter @Setter
+    private Order orderToCreate = new Order();
 
     @Transactional
-    public void PlaceOrder(String address, String message)
+    public String PlaceOrder(User user, List<OrderInfo> list)
     {
         if(paymentController.pay())
         {
-            CompletableFuture.runAsync(() -> processOrder(address, message));
+            CompletableFuture.runAsync(() -> ProcessOrder(user, list));
+            flowerProcessing.ReduceFlowerRemainder(list);
         }
+        return "orderPlacement?faces-redirect=true";
     }
 
-    @Transactional
-    public void processOrder(String address, String message)
-    {
-        Order order = new Order();
-        order.setDate(LocalDateTime.now());
-        order.setUser(currentUser.isLoggedIn() ? currentUser.getCurrentUser() : null);
-        order.setStatus(OrderStatus.ACCEPTED);
-        order.setOrderInfo(cart.getOrderInfos());
-        order.setAddress(address);
-        order.setMessage(message);
-        flowerProcessing.ReduceFlowerRemainder(cart.getOrderInfos());
-        ordersDAO.persist(order);
+    @Transactional(Transactional.TxType.REQUIRES_NEW)
+    public void ProcessOrder(User user, List<OrderInfo> list) {
+        orderToCreate.setDate(LocalDateTime.now());
+        orderToCreate.setUser(user.getId() != null ? user : null);
+        orderToCreate.setStatus(OrderStatus.ACCEPTED);
+        orderToCreate.setOrderInfo(list);
+        this.ordersDAO.persist(orderToCreate);
     }
 
     @Transactional
@@ -73,28 +70,8 @@ public class OrderController
         flowerProcessing.IncreaseFlowerRemainder(order.getOrderInfo());
     }
 
-    public List<Order> loadAllOrders()
-    {
-        return ordersDAO.loadAll();
-    }
-
-    public List<Order> loadCurrentUserOrders()
-    {
-        return ordersDAO.loadByCurrentUser(currentUser.getCurrentUser());
-    }
-
-    public Map<String, OrderStatus> getOrderStatusMap()
-    {
-        Map<String, OrderStatus> map = new LinkedHashMap<String, OrderStatus>();
-        for (OrderStatus o:
-                OrderStatus.values()) {
-            map.put(o.name(), o);
-        }
-        return  map;
-    }
-
     @Transactional
-    public void upogradeOrderStatus(String id)
+    public void upgradeOrderStatus(String id)
     {
         if(!id.equals(""))
         {

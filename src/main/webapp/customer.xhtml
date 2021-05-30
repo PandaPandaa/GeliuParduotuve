@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
->
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The FlowerStore</title>
+    <h:outputStylesheet library="indexCss" name="index.css" />
     <h:outputStylesheet library="css" name="default.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script>
@@ -17,24 +20,31 @@
             $("#footer").load("footer.xhtml");
         });
     </script>
-    <h:outputStylesheet library="css" name="default.css" />
 </h:head>
-
 <h:body class="lightGreyBackground">
     <div id="navbar"></div>
     <div class="lightGreyDiv">
         <div class="thingy5">
             <h2>Flowers:</h2>
-            <ol>
-                <ui:repeat value="#{flowers.loadAllFlowers()}" var="flower">
-                    <li>
-                        <h:link value="#{flower.name}" outcome="flowerDetails?flowerId=#{flower.id}" />
-                    </li>
-                </ui:repeat>
-            </ol>
             <h:form>
-<!--                <h:commandButton value="Place Order" action="#{orderController.PlaceOrder()}" />-->
-            </h:form><br/>
+                <p:dataGrid var="product" value="#{flowers.loadAllFlowers()}" columns="3" layout="grid"
+                            rows="12" paginator="true" id="cars"
+                            paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                            rowsPerPageTemplate="6,12,16">
+
+                    <div class="product-grid-item card" style="margin-bottom: 0">
+                        <div class="product-grid-item-content">
+                            <p:graphicImage value="#{fileProcessing.getFlowerPictureById(product.id)}" stream="false" style="display: block; margin: auto; margin-top: 10px"/>
+                            <div class="product-name" style="text-align: center"><h:link value="#{product.name}" outcome="flowerDetails?flowerId=#{product.id}" /></div>
+                        </div>
+                        <div class="product-grid-item-bottom">
+                            <h:outputText value="#{product.price}" styleClass="product-price">
+                                <f:convertNumber currencySymbol="€" type="currency"/>
+                            </h:outputText>
+                        </div>
+                    </div>
+                </p:dataGrid>
+            </h:form>
         </div>
     </div>
     <div id="footer"></div>
