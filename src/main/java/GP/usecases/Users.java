@@ -63,39 +63,31 @@ public class Users {
     public String UpdateCurrentUser()
     {
         try {
-            if(currentUser.isLoggedIn())
-            {
-                user.setId(currentUser.getCurrentUser().getId());
-                user.setVersion(currentUser.getCurrentUser().getVersion());
-                currentUser.setCurrentUser(usersDAO.update(user));
-            }
+            currentUser.setCurrentUser(usersDAO.update(currentUser.getCurrentUser()));
         } catch (OptimisticLockException e) {
-            return currentUser.getCurrentUser().getType().toString().toLowerCase(Locale.ROOT) + "?faces-redirect=true" + "&error=optimistic-lock-exception";
+            return "userSettings?faces-redirect=true" + "&error=optimistic-lock-exception";
         }
-        return currentUser.getCurrentUser().getType().toString().toLowerCase(Locale.ROOT) + "?faces-redirect=true";
+        return "userSettings?faces-redirect=true";
     }
 
     @LoggedInvocation
     @Transactional
     public String OverwriteCurrentUser()
     {
-        if(currentUser.isLoggedIn()) {
-            User u = usersDAO.findOne(currentUser.getCurrentUser().getId());
-            u.setName(user.getName());
-            u.setEmail(user.getEmail());
-            u.setPassword(user.getPassword());
-            currentUser.setCurrentUser(usersDAO.update(u));
-        }
-        return currentUser.getCurrentUser().getType().toString().toLowerCase(Locale.ROOT) + "?faces-redirect=true";
+        User u = usersDAO.findOne(currentUser.getCurrentUser().getId());
+        currentUser.getCurrentUser().setVersion(u.getVersion());
+        currentUser.setCurrentUser(usersDAO.update(currentUser.getCurrentUser()));
+        System.out.println(currentUser.getCurrentUser().getName());
+
+        return "userSettings?faces-redirect=true";
     }
 
     @LoggedInvocation
     @Transactional
     public String ReloadCurrentUser()
     {
-        if(currentUser.isLoggedIn()) {
-            currentUser.setCurrentUser(usersDAO.findOne(currentUser.getCurrentUser().getId()));
-        }
-        return currentUser.getCurrentUser().getType().toString().toLowerCase(Locale.ROOT) + "?faces-redirect=true";
+        currentUser.setCurrentUser(usersDAO.findOne(currentUser.getCurrentUser().getId()));
+
+        return "userSettings?faces-redirect=true";
     }
 }

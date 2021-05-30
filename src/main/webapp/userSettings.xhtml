@@ -23,10 +23,10 @@
     <div class="ui fluid">
         <div class="lightGreyDiv">
             <div class="thingy5">
-                <h2>My Profile</h2>
+                <h2>Mano profilis:</h2>
                 <h:form>
                     <div class="field">
-                        <h:outputLabel for="firstName" value="Name"/>
+                        <h:outputLabel for="firstName" value="Vardas"/>
                         <h:inputText id="firstName" label="Name" value="#{currentUser.currentUser.name}" required="true" >
                             <f:ajax event="change" render="firstNameError"/>
                         </h:inputText>
@@ -35,7 +35,7 @@
                     </div>
                     <br/>
                     <div class="field">
-                        <h:outputLabel value="email"/>
+                        <h:outputLabel value="El. paštas"/>
                         <h:inputText id="email" label="email" value="#{currentUser.currentUser.email}" required="true">
                             <f:ajax event="change" render="emailError"/>
                         </h:inputText>
@@ -43,7 +43,25 @@
                         <h:message id="emailError" class="error" for="email"/>
                     </div>
                     <br/>
-                    <h:commandButton value="Update" action="#{users.UpdateCurrentUser()}" />
+                    <div class="field">
+                        <h:outputLabel value="Naujas slaptažodis"/>
+                        <h:inputSecret id="pass" label="pass" value="#{currentUser.currentUser.password}" required="true">
+                            <f:ajax event="change" render="emailError"/>
+                        </h:inputSecret>
+                        <br/>
+                        <h:message id="passError" class="error" for="email"/>
+                    </div>
+                    <br/>
+                    <h:commandButton value="Keisti duomenis" action="#{users.UpdateCurrentUser()}" />
+                </h:form><br/>
+                <h:form rendered="#{param['error'] == 'optimistic-lock-exception'}">
+                    Jūsų duomenys buvo ką tik pakeisti!<br/>
+                    Ar norite juos<br/>
+                    <h:commandButton value="Išsaugoti Jūsų parašytus duomenis" action="#{users.OverwriteCurrentUser()}"/>
+                </h:form>
+                <h:form rendered="#{param['error'] == 'optimistic-lock-exception'}">
+                    ar<br/>
+                    <h:commandButton value="Atnaujinti duomenis" action="#{users.ReloadCurrentUser()}"/>
                 </h:form>
             </div>
         </div>
