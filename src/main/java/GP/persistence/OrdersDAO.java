@@ -10,6 +10,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.Comparator;
 import java.util.List;
 
 @ApplicationScoped
@@ -30,7 +31,9 @@ public class OrdersDAO {
     }
 
     public List<Order> loadAll() {
-        return em.createNamedQuery("Order.findAll", Order.class).getResultList();
+        List<Order> orders = em.createNamedQuery("Order.findAll", Order.class).getResultList();
+        orders.sort(Comparator.comparing(Order::getId).reversed());
+        return orders;
     }
 
     @SuppressWarnings("unchecked")

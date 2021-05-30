@@ -6,6 +6,7 @@ import GP.enums.FlowerCategory;
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.Comparator;
 import java.util.List;
 
 @ApplicationScoped
@@ -15,7 +16,9 @@ public class FlowersDAO {
     private EntityManager em;
 
     public List<Flower> loadAll() {
-        return em.createNamedQuery("Flower.findAll", Flower.class).getResultList();
+        List<Flower> flowers = em.createNamedQuery("Flower.findAll", Flower.class).getResultList();
+        flowers.sort(Comparator.comparing(Flower::getId));
+        return flowers;
     }
 
     public void persist(Flower flower){

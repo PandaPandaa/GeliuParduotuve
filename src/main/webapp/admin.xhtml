@@ -4,7 +4,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:c="http://java.sun.com/jsp/jstl/core"
-      xmlns:p="http://primefaces.org/ui"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://java.sun.com/jsf/core"
 >
 
 
@@ -28,11 +28,31 @@
             <c:when test="#{currentUser.currentUser.type == 'ADMIN'}">
             <div id="navbar"></div>
             <h2>Gėlės bei puokštės:</h2>
-            <ol>
-                <ui:repeat value="#{flowers.loadAllFlowers()}" var="flower">
-                    <li>#{flower.name}</li>
-                </ui:repeat>
-            </ol>
+
+                <h:dataTable value = "#{flowers.loadAllFlowers()}" var = "flower"
+                             border="3" cellpadding="3" cellspacing="3">
+
+                    <h:column>
+                        <f:facet name = "header">ID</f:facet>
+                        #{flower.id}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Pavadinimas</f:facet>
+                        #{flower.name}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Kaina</f:facet>
+                        #{flower.price}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Likutis</f:facet>
+                        #{flower.remainder}
+                    </h:column>
+                </h:dataTable>
+
             <h3>Pridėti naują gėlę ar puokštę:</h3>
             <h:form enctype="multipart/form-data">
                 Pavadinimas: <br/><h:inputText value="#{flowerProcessing.flowerToAdd.name}" required="true" /><br/>
