@@ -35,7 +35,7 @@ public class FlowerProcessing implements Serializable {
     {
         flowerToAdd.setFlowerPhoto(photoFile);
         flowersDAO.persist(flowerToAdd);
-        return "admin?faces-redirect=true&message=addingflower";
+        return "admin?faces-redirect=true";
     }
 
     @Transactional(Transactional.TxType.REQUIRES_NEW)

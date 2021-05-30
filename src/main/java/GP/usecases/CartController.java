@@ -29,7 +29,7 @@ public class CartController implements Serializable
             OrderInfo orderInfo = cart.getOrderInfos().stream().filter(o -> o.getFlowerName().equals(flower.getName())).findFirst().get();
             if(orderInfo.getFlowerAmount() + amount > flower.getRemainder())
             {
-                return "flowerDetails?faces-redirect=true&flowerId=" + flower.getId() + "&error=flower-sold-out";
+                return "flowerDetails?faces-redirect=true&flowerId=" + flower.getId() + "&error=not-enough-remainder";
             }
             else orderInfo.IncreaseAmount(amount);
         }

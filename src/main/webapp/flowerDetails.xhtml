@@ -5,6 +5,7 @@
       xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
 >
 <h:head>
+    <title>#{flowerDetails.flower.name} | Gėlių parduotuvė</title>
     <h:outputStylesheet library="css" name="default.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"/>
     <script>
@@ -31,7 +32,7 @@
                             <f:selectItems value="#{flowerDetails.amountList}" var="i"
                                            itemLabel="#{i}" itemValue="#{i}" />
                         </h:selectOneMenu>
-                        <h:commandButton value="Add to cart"
+                        <h:commandButton value="Pirdėti į krepšelį"
                                          action="#{cartController.addToCart(flowerDetails.flower,
                                          flowerDetails.amount)}">
                             <f:param name="flowerId" value="#{flowerDetails.flower.id}" />
@@ -39,7 +40,7 @@
                     </h:form>
                 </c:when>
                 <c:otherwise>
-                    <h:outputText value="Sold Out"/><br/>
+                    <h:outputText value="Deja, bet šios prekės šiuo metu neturime"/><br/>
                 </c:otherwise>
             </c:choose>
         </div>

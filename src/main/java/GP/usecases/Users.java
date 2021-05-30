@@ -42,8 +42,8 @@ public class Users {
     @Transactional
     public String Login(){
         User user = this.usersDAO.findByEmail(this.user.getEmail());
-        if(user == null) return "null user";
-        else if (!user.getPassword().equals(this.user.getPassword())) return "bad pass";
+        if(user == null) return "login?faces-redirect=true"+ "&error=user-not-exist";
+        else if (!user.getPassword().equals(this.user.getPassword())) return "login?faces-redirect=true"+ "&error=bad-pass";
         else
         {
             currentUser.setCurrentUser(user);

@@ -4,7 +4,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 <h:head>
-    <title>Sign in or Register | Flowershop</title>
+    <title>Registruotis | Gėlių parduotuvė</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&amp;display=swap" rel="stylesheet"/>
     <h:outputStylesheet library="css" name="default.css" />
     <h:outputStylesheet library="loginCss" name="login.css" />
@@ -25,11 +25,11 @@
     <h:form class="ui form" id="register">
         <div class="lightGreyDiv">
             <div class="thingy5">
-                <h1 class="ui header">Register</h1>
+                <h1 class="ui header">Registruotis</h1>
                 <div class="thingy6">
                     <div class="two fields">
                         <div class="field">
-                            <h:outputLabel for="firstName" value="Name"/>
+                            <h:outputLabel for="firstName" value="Vartotojo vardas"/>
                             <h:inputText id="firstName" label="Name" value="#{users.user.name}" required="true" >
                                 <f:ajax event="change" render="firstNameError"/>
                             </h:inputText>
@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div class="field">
-                        <h:outputLabel for="email" value="email"/>
+                        <h:outputLabel for="email" value="El. paštas"/>
                         <h:inputText id="email" label="Email" value="#{users.user.email}" required="true">
                             <f:validateRegex pattern="([^.@]+)(\.[^.@]+)*@([^.@]+\.)+([^.@]+)" />
                             <f:ajax event="change" render="emailError"/>
@@ -47,16 +47,16 @@
                         <h:message id="emailError" class="error" for="email"/>
                     </div>
                     <div class="field">
-                        <h:outputLabel for="password" value="password"/>
+                        <h:outputLabel for="password" value="Slaptažodis"/>
                         <h:inputSecret id="password" value="#{users.user.password}" label="#{msgs.password}" required="true">
                             <f:ajax event="change" render="passwordError"/>
                         </h:inputSecret>
                         <br/>
                         <h:message id="passwordError" class="error" for="password"/>
                     </div>
-                    <h:commandButton class="huge black fluid ui button" id="registerBtn" value="Register" action="#{users.Register}" />
+                    <h:commandButton class="huge black fluid ui button" id="registerBtn" value="Registruotis" action="#{users.Register}" />
                     <br/>
-                    <a href="login.xhtml" class="signUpLink">login</a>
+                    <a href="login.xhtml" class="signUpLink">Jau turite paskyrą? Prisijunkite</a>
                 </div>
             </div>
         </div>

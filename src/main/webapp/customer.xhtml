@@ -6,7 +6,7 @@
       xmlns:p="http://primefaces.org/ui" xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>The FlowerStore</title>
+    <title>Gėlės bei puokštės | Gėlių parduotuvė</title>
     <h:outputStylesheet library="indexCss" name="index.css" />
     <h:outputStylesheet library="css" name="default.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
@@ -25,7 +25,7 @@
     <div id="navbar"></div>
     <div class="lightGreyDiv">
         <div class="thingy5">
-            <h2>Flowers:</h2>
+            <h2>Gėlės bei puokštės</h2>
             <h:form>
                 <p:dataGrid var="product" value="#{flowers.loadAllFlowers()}" columns="3" layout="grid"
                             rows="12" paginator="true" id="cars"

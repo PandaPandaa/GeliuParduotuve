@@ -9,6 +9,7 @@
 
 
 <h:head>
+    <title>Administracija | Gėlių parduotuvė</title>
     <h:outputStylesheet library="css" name="default.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script>
@@ -26,25 +27,25 @@
         <c:choose>
             <c:when test="#{currentUser.currentUser.type == 'ADMIN'}">
             <div id="navbar"></div>
-            <h2>Flowers:</h2>
+            <h2>Gėlės bei puokštės:</h2>
             <ol>
                 <ui:repeat value="#{flowers.loadAllFlowers()}" var="flower">
                     <li>#{flower.name}</li>
                 </ui:repeat>
             </ol>
-            <h3>Add new flower:</h3>
+            <h3>Pridėti naują gėlę ar puokštę:</h3>
             <h:form enctype="multipart/form-data">
-                Flower's name: <br/><h:inputText value="#{flowerProcessing.flowerToAdd.name}" required="true" /><br/>
-                Flower's price: <br/><h:inputText value="#{flowerProcessing.flowerToAdd.price}" required="true" /><br/>
-                Flower's remainder: <br/><h:inputText value="#{flowerProcessing.flowerToAdd.remainder}" required="true" /><br/>
-                <p:fileUpload value="#{flowerProcessing.photoFile}" mode="simple" />
-                <h:commandButton value="Add new flower" action="#{flowerProcessing.AddFlower}" /><br/>
+                Pavadinimas: <br/><h:inputText value="#{flowerProcessing.flowerToAdd.name}" required="true" /><br/>
+                Kaina: <br/><h:inputText value="#{flowerProcessing.flowerToAdd.price}" required="true" /><br/>
+                Turimas kiekis: <br/><h:inputText value="#{flowerProcessing.flowerToAdd.remainder}" required="true" /><br/><br/>
+                <p:fileUpload label="Pasirinkti nuotrauką" skinSimple="true" value="#{flowerProcessing.photoFile}" mode="simple" /><br/><br/>
+                <h:commandButton value="Pridėti" action="#{flowerProcessing.AddFlower}" /><br/>
             </h:form>
             <div id="footer"></div>
             </c:when>
             <c:otherwise>
                 <div>
-                    You have no permission to access this site
+                    Jūs neturite teisės būti šiame puslapyje
                 </div>
             </c:otherwise>
         </c:choose>
