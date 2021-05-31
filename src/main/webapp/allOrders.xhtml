@@ -10,6 +10,7 @@
     <title>Gauti užsakymai | Gėlių parduotuvė</title>
     <h:outputStylesheet library="css" name="default.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <h:outputStylesheet library="css" name="default.css" />
     <script>
         $(function(){
             $("#navbar").load("navbar.xhtml");
@@ -25,64 +26,65 @@
     <c:choose>
         <c:when test="#{currentUser.currentUser.type == 'ADMIN'}">
             <div id="navbar"></div>
-            <h2>Gauti užsakymai:</h2>
+            <div id="wrapper">
+                <h2>Gauti užsakymai:</h2>
 
-            <h:dataTable value = "#{orders.loadAllOrders()}" var = "order"
-                         border="3" cellpadding="3" cellspacing="3">
+                <h:dataTable value = "#{orders.loadAllOrders()}" var = "order"
+                             border="3" cellpadding="3" cellspacing="3">
 
-                <h:column>
-                    <f:facet name = "header">ID</f:facet>
-                    #{order.id}
-                </h:column>
+                    <h:column>
+                        <f:facet name = "header">ID</f:facet>
+                        #{order.id}
+                    </h:column>
 
-                <h:column>
-                    <f:facet name = "header">Pirkėjo vardas</f:facet>
-                    #{order.user.name}
-                </h:column>
+                    <h:column>
+                        <f:facet name = "header">Pirkėjo vardas</f:facet>
+                        #{order.user.name}
+                    </h:column>
 
-                <h:column>
-                    <f:facet name = "header">Adresas</f:facet>
-                    #{order.address}
-                </h:column>
+                    <h:column>
+                        <f:facet name = "header">Adresas</f:facet>
+                        #{order.address}
+                    </h:column>
 
-                <h:column>
-                    <f:facet name = "header">Žinutė gavėjui</f:facet>
-                    #{order.message}
-                </h:column>
+                    <h:column>
+                        <f:facet name = "header">Žinutė gavėjui</f:facet>
+                        #{order.message}
+                    </h:column>
 
-                <h:column>
-                    <f:facet name = "header">Statusas</f:facet>
-                    <h:form>
-                        <h:commandButton value="#{order.status}" action="#{orderController.upgradeOrderStatus(order.id)}"/>
-                    </h:form>
-                </h:column>
+                    <h:column>
+                        <f:facet name = "header">Statusas</f:facet>
+                        <h:form>
+                            <h:commandButton value="#{order.status}" action="#{orderController.upgradeOrderStatus(order.id)}"/>
+                        </h:form>
+                    </h:column>
 
-                <h:column>
-                    <f:facet name = "header">Data</f:facet>
-                    #{order.getDate()}
-                </h:column>
+                    <h:column>
+                        <f:facet name = "header">Data</f:facet>
+                        #{order.getDate()}
+                    </h:column>
 
-                <h:column>
-                    <f:facet name = "header">Prekės pavadinimas</f:facet>
-                    <h:dataTable value="#{order.getOrderInfo()}" var="info"
-                                 cellpadding="3" cellspacing="3">
-                        <h:column>
-                            #{info.flowerName}
-                        </h:column>
-                    </h:dataTable>
-                </h:column>
+                    <h:column>
+                        <f:facet name = "header">Prekės pavadinimas</f:facet>
+                        <h:dataTable value="#{order.getOrderInfo()}" var="info"
+                                     cellpadding="3" cellspacing="3">
+                            <h:column>
+                                #{info.flowerName}
+                            </h:column>
+                        </h:dataTable>
+                    </h:column>
 
-                <h:column>
-                    <f:facet name = "header">Kiekis</f:facet>
-                    <h:dataTable value="#{order.getOrderInfo()}" var="info"
-                                 cellpadding="3" cellspacing="3">
-                        <h:column>
-                            #{info.flowerAmount}
-                        </h:column>
-                    </h:dataTable>
-                </h:column>
-            </h:dataTable>
-
+                    <h:column>
+                        <f:facet name = "header">Kiekis</f:facet>
+                        <h:dataTable value="#{order.getOrderInfo()}" var="info"
+                                     cellpadding="3" cellspacing="3">
+                            <h:column>
+                                #{info.flowerAmount}
+                            </h:column>
+                        </h:dataTable>
+                    </h:column>
+                </h:dataTable>
+            </div>
             <div id="footer"></div>
         </c:when>
         <c:otherwise>

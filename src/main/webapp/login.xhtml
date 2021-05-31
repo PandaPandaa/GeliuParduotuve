@@ -23,15 +23,15 @@
     <div id="navbar"></div>
     <!--composite component that comes from the navbar.xhtml file to avoid coding nav bar in all web pages-->
 <!--    <bookstore:navbar/>-->
-    <div class="ui fluid">
-        <div class="lightGreyDiv">
+    <div class="ui fluid" id="wrapper">
+        <div class="lightGreyDiv" >
             <div class="thingy5">
                 <h1 class="ui header">Prisijungti</h1>
                 <div class="thingy6">
                     <h:form>
                     <div class="field">
                         <h:outputLabel for="email" value="El. paštas"/>
-                        <h:inputText id="email" label="email" value="#{users.user.email}" required="true">
+                        <h:inputText id="email" label="email" value="#{users.user.email}" required="true" requiredMessage="Prašome įvesti el.paštą">
                             <f:ajax event="change" render="emailError"/>
                         </h:inputText>
                         <br/>
@@ -40,7 +40,7 @@
                     <br/>
                     <div class="field">
                         <h:outputLabel for="password" value="Slaptažodis"/>
-                        <h:inputSecret id="password" label="password" value="#{users.user.password}" required="true"/>
+                        <h:inputSecret id="password" label="password" value="#{users.user.password}" required="true" requiredMessage="Prašome įvesti slaptažodi"/>
                         <br/>
                         <h:message class="error" for="password"/>
                     </div>

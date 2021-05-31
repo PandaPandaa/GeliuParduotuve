@@ -20,7 +20,7 @@
 </h:head>
 <h:body class="lightGreyBackground">
     <div id="navbar"></div>
-    <div class="lightGreyDiv">
+    <div class="lightGreyDiv" id="wrapper">
         <div class="thingy5">
             <h2>Krepšelyje:</h2>
             <h:dataTable value = "#{cart.orderInfos}" var = "info"
@@ -53,10 +53,21 @@
                 </h:column>
             </h:dataTable><br/>
             <h:form>
-                Gavėjo vardas ir pavardė:<br/>
-                <h:inputText value="#{orderController.orderToCreate.receiverName}" required="true"/><br/>
-                Gavėjo adresas:<br/>
-                <h:inputText value="#{orderController.orderToCreate.address}" required="true"/><br/>
+                <div class="field">
+                    <h:outputLabel for="varPavarde" value="Gavėjo vardas ir pavardė:"/><br/>
+                    <h:inputText id="varPavarde" value="#{orderController.orderToCreate.receiverName}" required="true" requiredMessage="Prašome įvesti vardą ir pavardę" validatorMessage="Ilgis turi būti tarp 5 ir 50 symbolių">
+                        <f:ajax event="change" render="varPavardeError"/>
+                        <f:validateLength minimum="5" maximum="50"  />
+                    </h:inputText>
+                    <br/>
+                    <h:message id="varPavardeError" class="error" for="varPavarde"/>
+                </div>
+                <h:outputLabel for="Address" value="Gavėjo adresas:"/><br/>
+                <h:inputText id="Address" value="#{orderController.orderToCreate.address}" required="true" requiredMessage="Prašome įvesti adresą" validatorMessage="Ilgis turi būti tarp 10 ir 100 symbolių">
+                    <f:ajax event="change" render="varPavardeError"/>
+                    <f:validateLength minimum="10" maximum="100" />
+                </h:inputText><br/>
+                <h:message id="AddressError" class="error" for="Address"/><br/>
                 Žinutė gavėjui (nebūtina):<br/>
                 <h:inputText value="#{orderController.orderToCreate.message}" required="false"/><br/>
                 <h:commandButton value="Apmokėti" action="#{orderController.PlaceOrder(currentUser.currentUser, cart.orderInfos)}"/>

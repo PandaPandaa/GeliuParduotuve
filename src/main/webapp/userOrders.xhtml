@@ -25,6 +25,7 @@
 </h:head>
 <h:body class="lightGreyBackground">
     <div id="navbar"></div>
+    <div id="wrapper">
     <h2>Mano užsakymai:</h2>
 
     <h:dataTable value = "#{orders.loadCurrentUserOrders()}" var = "order"
@@ -89,8 +90,9 @@
             </c:choose>
         </h:column>
     </h:dataTable>
-
+    </div>
     <div id="footer"></div>
+
 </h:body>
 </html>
 
