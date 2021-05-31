@@ -1,6 +1,8 @@
 package GP.usecases;
 
 import GP.entities.Flower;
+import GP.entities.Order;
+import GP.enums.OrderStatus;
 import GP.interceptors.LoggedInvocation;
 import GP.persistence.FlowersDAO;
 import GP.utilities.OrderInfo;
@@ -28,6 +30,9 @@ public class FlowerProcessing implements Serializable {
 
     @Getter @Setter
     private UploadedFile photoFile;
+
+    @Getter @Setter
+    private Integer amount;
 
     @LoggedInvocation
     @Transactional
@@ -57,6 +62,17 @@ public class FlowerProcessing implements Serializable {
             Flower flower = flowersDAO.findOne(o.getFlowerId());
             flower.setRemainder(flower.getRemainder() + o.getFlowerAmount());
             flowersDAO.update(flower);
+        }
+    }
+
+    @Transactional
+    public void UpdateFlowerRemainder(String id, Integer amount)
+    {
+        if(!id.equals(""))
+        {
+            int i = Integer.parseInt(id);
+            Flower f = flowersDAO.findOne(i);
+            f.setRemainder(amount);
         }
     }
 }

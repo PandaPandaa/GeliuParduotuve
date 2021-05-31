@@ -52,6 +52,14 @@
                                 <f:facet name = "header">Likutis</f:facet>
                                 #{flower.remainder}
                             </h:column>
+
+                            <h:column>
+                                <f:facet name = "header">Keisti likutį</f:facet>
+                                <h:form>
+                                    <p:inputNumber value="#{flowerProcessing.amount}" size="1" decimalPlaces="0" minValue="0"/>
+                                    <h:commandButton value="Keisti" action="#{flowerProcessing.UpdateFlowerRemainder(flower.id, flowerProcessing.amount)}"/>
+                                </h:form>
+                            </h:column>
                         </h:dataTable>
 
                     <h3>Pridėti naują gėlę ar puokštę:</h3>
