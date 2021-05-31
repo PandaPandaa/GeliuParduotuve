@@ -44,6 +44,9 @@ public class Flower implements Serializable {
     @Column(name = "CATEGORY")
     private FlowerCategory flowerCategory;
 
+    @Column(name = "DESCRIPTION")
+    private String description;
+
     public Flower() {
     }
 

@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui"
 >
 <h:head>
     <title>#{flowerDetails.flower.name} | Gėlių parduotuvė</title>
@@ -27,7 +28,12 @@
             <c:choose>
                 <c:when test="#{flowerDetails.flower.remainder gt 0}">
                     <h:form>
-                        <h:outputText value="Price: #{flowerDetails.flower.price} "/> <br/>
+                        <br/>
+                        <p:graphicImage value="#{flowerDetails.flower.flowerPhoto}" stream="false" style="margin-top: 10px; border-radius: 4px"  width="560" height="100%"/><br/>
+                        <b>Aprašas:</b> <br/><h:outputText value="#{flowerDetails.flower.description} " style="display: inline-block"/> <br/><br/>
+                        <b>Kaina: </b> <h:outputText value="#{flowerDetails.flower.price}">
+                            <f:convertNumber currencySymbol="€" type="currency"/>
+                        </h:outputText><br/>
                         <h:selectOneMenu value="#{flowerDetails.amount}">
                             <f:selectItems value="#{flowerDetails.amountList}" var="i"
                                            itemLabel="#{i}" itemValue="#{i}" />
