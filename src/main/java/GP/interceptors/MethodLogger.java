@@ -29,7 +29,7 @@ public class MethodLogger implements Serializable{
     @AroundInvoke
     public Object logMethodInvocation(InvocationContext context) throws Exception {
         String id = "";
-        FileWriter logger = new FileWriter("log.txt");
+        FileWriter logger = new FileWriter("log.txt", true);
         if(currentUser.getCurrentUser().getId() != null)
         {
             id = currentUser.getCurrentUser().getId().toString();
