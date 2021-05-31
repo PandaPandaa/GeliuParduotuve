@@ -34,8 +34,8 @@
 
                     <div class="product-grid-item card" style="margin-bottom: 0">
                         <div class="product-grid-item-content">
-                            <p:graphicImage value="#{fileProcessing.getFlowerPictureById(product.id)}" stream="false" style="display: block; margin: auto; margin-top: 10px"/>
-                            <div class="product-name" style="text-align: center"><h:link value="#{product.name}" outcome="flowerDetails?flowerId=#{product.id}" /></div>
+                            <p:graphicImage value="#{fileProcessing.getFlowerPictureById(product.id)}" stream="false" style="display: block; margin: auto; margin-top: 10px; border-radius: 4px;" width="280" height="100%"/>
+                            <div class="product-name" style="text-align: center; font-size: 20px"><h:link value="#{product.name}" outcome="flowerDetails?flowerId=#{product.id}"/></div>
                         </div>
                         <div class="product-grid-item-bottom">
                             <h:outputText value="#{product.price}" styleClass="product-price">
