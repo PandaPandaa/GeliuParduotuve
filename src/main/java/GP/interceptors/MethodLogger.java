@@ -36,7 +36,7 @@ public class MethodLogger implements Serializable{
             logger.write("TIME = " + LocalDateTime.now() +
                     " CLASS = " + context.getMethod().getDeclaringClass().getName() +
                     " METHOD = " + context.getMethod().getName() +
-                    " USER_ID = " + id);
+                    " USER_ID = " + id + "\n");
         }
         else
         {
@@ -46,7 +46,7 @@ public class MethodLogger implements Serializable{
             logger.write("TIME = " + LocalDateTime.now() +
                     " CLASS = " + context.getMethod().getDeclaringClass().getName() +
                     " METHOD = " + context.getMethod().getName() +
-                    " SESSION_ID = " + id);
+                    " SESSION_ID = " + id + "\n");
         }
         logger.close();
 

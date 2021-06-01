@@ -17,6 +17,7 @@ import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.List;
 
+@LoggedInvocation
 @Named
 @RequestScoped
 public class FlowerProcessing implements Serializable {
@@ -34,7 +35,6 @@ public class FlowerProcessing implements Serializable {
     @Getter @Setter
     private Integer amount;
 
-    @LoggedInvocation
     @Transactional
     public String AddFlower()
     {

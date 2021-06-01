@@ -20,7 +20,7 @@ public class SimplePaymentController implements PaymentController {
     {
         double price = 0;
         for (OrderInfo o:
-             cart.getOrderInfos()) {
+                cart.getOrderInfos()) {
             price += o.getFlowerPrice() * o.getFlowerAmount();
         }
         return price;

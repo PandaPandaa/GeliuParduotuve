@@ -47,4 +47,9 @@ public class CartController implements Serializable
         }
         return "flowerDetails?faces-redirect=true&flowerId=" + flower.getId();
     }
+
+    public void emptyCart()
+    {
+        cart.setOrderInfos(new ArrayList<OrderInfo>());
+    }
 }

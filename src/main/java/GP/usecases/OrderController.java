@@ -23,10 +23,7 @@ import java.util.concurrent.CompletableFuture;
 public class OrderController implements Serializable {
 
     @Inject
-    private CurrentUser currentUser;
-
-    @Inject
-    private Cart cart;
+    private CartController cartController;
 
     @Inject
     private OrdersDAO ordersDAO;
@@ -37,7 +34,8 @@ public class OrderController implements Serializable {
     @Inject
     private PaymentController paymentController;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     private Order orderToCreate = new Order();
 
     @Transactional
@@ -47,17 +45,18 @@ public class OrderController implements Serializable {
         {
             CompletableFuture.runAsync(() -> ProcessOrder(user, list));
             flowerProcessing.ReduceFlowerRemainder(list);
+            cartController.emptyCart();
         }
-        return "orderPlacement?faces-redirect=true";
+        return "customer?faces-redirect=true";
     }
 
     @Transactional(Transactional.TxType.REQUIRES_NEW)
     public void ProcessOrder(User user, List<OrderInfo> list) {
-        orderToCreate.setDate(LocalDateTime.now());
-        orderToCreate.setUser(user.getId() != null ? user : null);
-        orderToCreate.setStatus(OrderStatus.ACCEPTED);
-        orderToCreate.setOrderInfo(list);
-        this.ordersDAO.persist(orderToCreate);
+        this.orderToCreate.setDate(LocalDateTime.now());
+        this.orderToCreate.setUser(user.getId() != null ? user : null);
+        this.orderToCreate.setStatus(OrderStatus.ACCEPTED);
+        this.orderToCreate.setOrderInfo(list);
+        this.ordersDAO.persist(this.orderToCreate);
     }
 
     @Transactional

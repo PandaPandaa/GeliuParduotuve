@@ -29,7 +29,7 @@
                 <c:when test="#{flowerDetails.flower.remainder gt 0}">
                     <h:form>
                         <br/>
-                        <p:graphicImage value="#{flowerDetails.flower.flowerPhoto}" stream="false" style="margin-top: 10px; border-radius: 4px"  width="560" height="100%"/><br/>
+                        <p:graphicImage value="#{flowerDetails.flower.flowerPhoto}" stream="false" style="margin-top: 10px; border-radius: 4px"  width="560" height="100%"/><br/><br/>
                         <b>Aprašas:</b> <br/><h:outputText value="#{flowerDetails.flower.description} " style="display: inline-block"/> <br/><br/>
                         <b>Kaina: </b> <h:outputText value="#{flowerDetails.flower.price}">
                             <f:convertNumber currencySymbol="€" type="currency"/>
